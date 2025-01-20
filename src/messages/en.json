@@ -76,7 +76,7 @@
   },
   "home": {
     "navigtion": {
-      "name": "Dashboard",
+      "name": "dashboard",
       "features": "Features",
       "pricing": "Pricing",
       "faqs": "FAQs",
@@ -89,13 +89,13 @@
     },
     "features": {
       "name": "features",
-      "title": " Unlock Unlimited Possibilities with AI",
+      "title": " Unlock Unlimited Possibilities with Pictoria AI",
       "text": " Our platform offers a wide range of features designed to enhance your image creation experience. From easy-to-use editing tools to powerful AI-powered image generation, we have everything you need to bring your ideas to life."
     },
     "hero": {
       "title1": "Try new flux model",
       "title2": "Transform your photos with the power of AI",
-      "title3": " From headshots to influencer photos, AI&apos;s state-of-the-art technology ensures you always look your best. Create, edit, and generate images effortlessly.",
+      "title3": " From LinkedIn headshots to Instagram influencer photos, Pictoria AI&apos;s state-of-the-art technology ensures you always look your best. Create, edit, and generate images effortlessly.",
       "title4": "Loved by 1k+ customers",
       "title5": " Crreate Your First AI Model"
     },
@@ -117,7 +117,7 @@
     "review": {
       "title1": "Testimonials",
       "title2": "What Our Users Say",
-      "title3": " Discover why thousands are choosing AI for effortless,high-quality photo generation, from LinkedIn headshots to vibrant social media content."
+      "title3": " Discover why thousands are choosing Pictoria AI for effortless,high-quality photo generation, from LinkedIn headshots to vibrant social media content."
     },
     "ready": {
       "title1": "Ready to Transform Your Photos?",
@@ -126,7 +126,18 @@
     }
   },
   "dashboard": {
-    "title": "Welcome back"
+    "title": "Welcome back",
+
+    "statsCards": {
+      "name1": "Total Images",
+      "info1": "Images generated so far",
+      "name2": "Total Models",
+      "info2": "Custom models trained",
+      "name3": "Image Credits",
+      "info3": "Available generation credits",
+      "name4": "Training Credits",
+      "info4": "Available training credits"
+    }
   },
   "modelTraining": {
     "title": "Train Model",

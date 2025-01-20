@@ -1,15 +1,15 @@
-import {
-  BrainCircuit,
-  ChartNetwork,
-  CreditCard,
-  Database,
-  ImageIcon,
-  LayoutTemplate,
-  Network,
-  Package2,
-  Palette,
-} from "lucide-react";
-
+import { ImageIcon, Package2, Palette } from "lucide-react";
+import img1 from "@/public/hero-images/Charismatic Young Man with a Warm Smile and Stylish Tousled Hair.jpeg";
+import img2 from "@/public/hero-images/Confident Businesswoman on Turquoise Backdrop.jpeg";
+import img3 from "@/public/hero-images/Confident Woman in Red Outfit.jpeg";
+import img4 from "@/public/hero-images/Confident Woman in Urban Setting.jpeg";
+import img5 from "@/public/hero-images/Futuristic Helmet Portrait.jpeg";
+import img6 from "@/public/hero-images/Futuristic Woman in Armor.jpeg";
+import img7 from "@/public/hero-images/Man in Brown Suit.jpeg";
+import img8 from "@/public/hero-images/Poised Elegance of a Young Professional.jpeg";
+import img9 from "@/public/hero-images/Professional Business Portrait.jpeg";
+import img10 from "@/public/hero-images/Sophisticated Businessman Portrait.jpeg";
+import img11 from "@/public/hero-images/Professional Woman in Navy Blue Suit.jpeg";
 import avatar1 from "@/public/avatars/AutumnTechFocus.jpeg";
 import avatar2 from "@/public/avatars/Casual Creative Professional.jpeg";
 import avatar3 from "@/public/avatars/Golden Hour Contemplation.jpeg";
@@ -20,69 +20,66 @@ import avatar6 from "@/public/avatars/Relaxed Bearded Man with Tattoo at Cozy Ca
 export const faqsList: any = {
   en: [
     {
-      question: "1. What is an AI SaaS Template?",
+      question: "How does Pictoria AI work?",
       answer:
-        "An AI SaaS Template is a pre-built software framework designed for developing AI-driven SaaS (Software as a Service) applications. It integrates AI functionalities (such as text generation, image processing), user authentication, payment processing, data management, and deployment tools, helping developers quickly build and launch AI-driven applications.",
+        "Pictoria AI uses advanced machine learning algorithms to analyze and understand your photos. It then generates new images based on your features and the scenarios you choose, creating realistic and personalized results.",
     },
     {
-      question: "2. What are the core features of an AI SaaS Template?",
+      question: "Is my data safe with Pictoria AI?",
       answer:
-        "The core features of an AI SaaS Template include pre-configured AI integrations (such as text generation, image processing), user authentication (e.g., Google OAuth), payment processing (e.g., Stripe integration), data management (e.g., Supabase real-time database), one-click deployment (supporting Vercel/Cloudflare), and business analytics (e.g., Google Analytics integration), enabling developers to rapidly build and optimize AI-driven SaaS applications.",
+        "Yes, we take data privacy very seriously. All uploaded photos and generated images are encrypted and stored securely. We never share your personal data or images with third parties without your explicit consent.",
     },
     {
-      question:
-        "3. Why choose an AI SaaS Template instead of building from scratch?",
+      question: "How many photos do I need to upload for best results?",
       answer:
-        "Choosing an AI SaaS Template saves time, reduces costs, provides high-quality and flexible solutions, and accelerates time-to-market with one-click deployment and pre-built features, avoiding the need to redevelop common functionalities.",
+        "For optimal results, we recommend uploading at least 10-20 diverse photos of yourself. This helps our AI model better understand your features and expressions, leading to more accurate and realistic generated images.",
     },
     {
-      question: "4. What are the suitable use cases for an AI SaaS Template?",
+      question: "Can I use Pictoria AI for commercial purposes?",
       answer:
-        "AI SaaS Templates are suitable for scenarios such as AI content generation, intelligent customer service, data analysis, personalized recommendations, and offering paid API services, meeting diverse business needs.",
+        "Yes, our Pro and Enterprise plans include commercial usage rights for the images you generate. However, please note that you should always respect copyright and privacy laws when using AI-generated images.",
     },
     {
-      question:
-        "5. How to deploy an AI SaaS Template to a production environment?",
+      question: "How often do you update the AI model?",
       answer:
-        "By configuring environment variables, selecting Vercel or Cloudflare for one-click deployment, verifying that functionalities work correctly, and using monitoring tools to optimize performance, you can quickly deploy an AI SaaS Template to a production environment.",
+        "We continuously work on improving our AI model. Major updates are typically released quarterly, with minor improvements and optimizations happening more frequently. All users benefit from these updates automatically.",
     },
     {
-      question:
-        "6. How can an AI SaaS Template help businesses achieve profitability?",
+      question: "What are the differences between the free and paid plans?",
       answer:
-        "An AI SaaS Template helps businesses achieve profitability through subscription models, API sales, credit systems, and business analytics tools, while supporting rapid iteration and optimization to enhance user retention and revenue growth.",
+        "The free plan allows you to generate up to 5 images per day. The Pro plan includes unlimited image generation, higher resolution output, and access to additional features. The Enterprise plan is tailored for businesses and offers custom integrations and dedicated support.",
     },
   ],
   zh: [
     {
-      question: "1. 什么是 AI SaaS 模板？",
+      question: "Pictoria AI 是如何工作的？",
       answer:
-        "AI SaaS 模板是一个预先构建的软件框架，专为开发 AI 驱动的 SaaS（软件即服务）应用而设计。它集成了 AI 功能（如文本生成、图像处理）、用户认证、支付处理、数据管理和部署工具，帮助开发者快速构建和发布 AI 驱动的应用。",
+        "Pictoria AI 使用先进的机器学习算法来分析和理解您的照片。然后，它根据您的特征和您选择的场景生成新的图像，创造出逼真且个性化的结果。",
     },
     {
-      question: "2. AI SaaS 模板的核心功能有哪些？",
+      question: "我的数据在 Pictoria AI 中安全吗？",
       answer:
-        "AI SaaS 模板的核心功能包括预配置的 AI 集成（如文本生成、图像处理）、用户认证（如 Google OAuth）、支付处理（如 Stripe 集成）、数据管理（如 Supabase 实时数据库）、一键部署（支持 Vercel/Cloudflare）以及业务分析（如 Google Analytics 集成），帮助开发者快速构建和优化 AI 驱动的 SaaS 应用。",
+        "是的，我们非常重视数据隐私。所有上传的照片和生成的图像都会加密并安全存储。未经您的明确同意，我们绝不会与第三方共享您的个人数据或图像。",
     },
     {
-      question: "3. 为什么选择 AI SaaS 模板而不是从头开发？",
+      question: "为了获得最佳效果，我需要上传多少张照片？",
       answer:
-        "选择 AI SaaS 模板可以节省时间、降低成本，提供高质量且灵活的解决方案，同时通过一键部署和预置功能加速产品上市，避免重复开发通用功能。",
+        "为了获得最佳效果，我们建议至少上传 10-20 张您的多样化照片。这有助于我们的 AI 模型更好地理解您的特征和表情，从而生成更准确和逼真的图像。",
     },
     {
-      question: "4. AI SaaS 模板适合哪些应用场景？",
+      question: "我可以将 Pictoria AI 用于商业用途吗？",
       answer:
-        "AI SaaS 模板适用于 AI 内容生成、智能客服、数据分析、个性化推荐以及提供付费 API 服务等场景，满足多样化的业务需求。",
+        "可以，我们的 Pro 和 Enterprise 计划包含您生成的图像的商业使用权。但请注意，在使用 AI 生成的图像时，您应始终遵守版权和隐私法律。",
     },
     {
-      question: "5. 如何将 AI SaaS 模板部署到生产环境？",
+      question: "你们多久更新一次 AI 模型？",
       answer:
-        "通过配置环境变量、选择 Vercel 或 Cloudflare 进行一键部署，并验证功能正常运行，最后利用监控工具优化性能，即可快速将 AI SaaS 模板部署到生产环境。",
+        "我们不断改进我们的 AI 模型。重大更新通常每季度发布一次，而较小的改进和优化会更频繁地进行。所有用户都会自动受益于这些更新。",
     },
     {
-      question: "6. AI SaaS 模板如何帮助企业实现盈利？",
+      question: "免费计划和付费计划有什么区别？",
       answer:
-        "AI SaaS 模板通过订阅模式、API 销售、积分系统和业务分析工具，帮助企业实现盈利，同时支持快速迭代和优化，提升用户留存和收入增长。",
+        "免费计划允许您每天生成最多 5 张图像。Pro 计划包括无限图像生成、更高分辨率的输出以及访问额外功能。Enterprise 计划专为企业设计，提供定制集成和专属支持。",
     },
   ],
 };
@@ -90,78 +87,42 @@ export const faqsList: any = {
 export const featureList = {
   en: [
     {
-      title: "Next.js Template",
+      title: "AI-Powered Photos",
       description:
-        "Provides an SEO-friendly, multi-language, internationalized, and multi-module Next.js template to help developers quickly kickstart their projects. The template supports flexible configuration and extension, ensuring adaptability to various business needs while simplifying the development process and improving efficiency.",
-      icon: <LayoutTemplate className="w-6 h-6" strokeWidth={1.5} />,
+        " Instantly transform your photos into high-quality, lifelike images with the power of AI. Whether you need fresh content for social media, professional shots for LinkedIn, or a fun set of images for personal project.",
+      icon: <ImageIcon className="w-6 h-6" strokeWidth={1.5} />,
     },
     {
-      title: "Authentication and Payments",
+      title: "Diverse Photo Packs at Your Fingertips",
       description:
-        "Google OAuth Integration: Offers one-click login functionality, allowing users to quickly register and log in using their Google accounts, simplifying the user authentication process. Stripe Payment Processing: Integrates Stripe to support global payment functionalities, including subscription services and one-time payments, meeting diverse business needs.",
-      icon: <CreditCard className="w-6 h-6" strokeWidth={1.5} />,
+        "Instantly transform your photos into high-quality, lifelike images with the power of AI. Whether you need fresh content for social media, professional shots for LinkedIn, or a fun set of images for personal project. ",
+      icon: <Package2 className="w-6 h-6" strokeWidth={1.5} />,
     },
     {
-      title: "Data Infrastructure",
+      title: "Customizable Photo Generation",
       description:
-        "Built-in Supabase Integration: Supabase provides instant data storage, authentication, and real-time database functionalities, helping developers manage data quickly and simplify backend development. Scalability: Supports dynamic scaling of data structures to adapt to applications of different sizes, ensuring the project can grow alongside business needs.",
-      icon: <Database className="w-6 h-6" strokeWidth={1.5} />,
-    },
-    {
-      title: "One-Click Deployment",
-      description:
-        "Vercel/Cloudflare Deployment Support: Simplifies the deployment process by enabling one-click deployment to quickly push projects to production environments, automating setup and optimizing deployment workflows. Automated Configuration: Pre-configured environment variables and services reduce human errors during deployment, ensuring stability and reliability.",
-      icon: <Network className="w-6 h-6" strokeWidth={1.5} />,
-    },
-    {
-      title: "Business Analytics",
-      description:
-        "Google Analytics and Search Console Integration: Tracks website traffic, user behavior, and growth data in real-time, helping developers and businesses make data-driven decisions. Growth Tracking: Built-in tracking tools monitor user growth and interactions for continuous optimization, enhancing user experience and business performance.",
-      icon: <ChartNetwork className="w-6 h-6" strokeWidth={1.5} />,
-    },
-    {
-      title: "AI Infrastructure",
-      description:
-        "Pre-configured AI Integrations: The template offers various pre-configured AI functionalities, such as text generation and image processing, helping developers quickly integrate AI capabilities into their projects. Credit System and API Sales: Includes a built-in credit system where users can access AI services or purchase API interfaces, supporting paid API calls to help developers and businesses monetize their offerings.",
-      icon: <BrainCircuit className="w-6 h-6" strokeWidth={1.5} />,
+        "Instantly transform your photos into high-quality, lifelike images with the power of AI. Whether you need fresh content for social media, professional shots for LinkedIn, or a fun set of images for personal project.",
+      icon: <Palette className="w-6 h-6" strokeWidth={1.5} />,
     },
   ],
   zh: [
     {
-      title: "Next.js 模板",
+      title: "AI 驱动的照片",
       description:
-        "提供一个支持SEO友好、多语言、国际化的、多模块的Next.js模板，帮助开发者快速启动项目。模板支持灵活配置和扩展，确保适应不同的业务需求，同时简化开发流程，提升效率。",
-      icon: <LayoutTemplate className="w-6 h-6" strokeWidth={1.5} />,
+        "利用 AI 的力量，立即将您的照片转换为高质量、逼真的图像。无论您是需要社交媒体上的新鲜内容、LinkedIn 上的专业照片，还是个人项目中的一组有趣图像。",
+      icon: <ImageIcon className="w-6 h-6" strokeWidth={1.5} />,
     },
     {
-      title: "身份验证和支付",
+      title: "触手可及的多样化照片包",
       description:
-        "Google OAuth 集成：提供一键登录功能，用户可以通过 Google 账户快速注册和登录，简化用户认证流程。Stripe 支付处理：集成 Stripe，支持全球范围内的支付功能，包括订阅服务、一次性支付等，满足多样化的商业需求。",
-      icon: <CreditCard className="w-6 h-6" strokeWidth={1.5} />,
+        "利用 AI 的力量，立即将您的照片转换为高质量、逼真的图像。无论您是需要社交媒体上的新鲜内容、LinkedIn 上的专业照片，还是个人项目中的一组有趣图像。",
+      icon: <Package2 className="w-6 h-6" strokeWidth={1.5} />,
     },
     {
-      title: "数据基础设施",
+      title: "可定制的照片生成",
       description:
-        "内置 Supabase 集成：Supabase 提供即时数据存储、认证和实时数据库功能，帮助开发者快速管理数据，简化后端开发。可扩展性：支持动态扩展数据结构，适应不同规模的应用需求，确保项目能够随着业务增长而扩展。",
-      icon: <Database className="w-6 h-6" strokeWidth={1.5} />,
-    },
-    {
-      title: "一键部署",
-      description:
-        "Vercel/Cloudflare 部署支持：简化部署过程，通过一键部署将项目快速推向生产环境，自动化设置并优化部署流程。自动化配置：预配置环境变量和服务，减少部署过程中的人为错误，确保部署的稳定性和可靠性。",
-      icon: <Network className="w-6 h-6" strokeWidth={1.5} />,
-    },
-    {
-      title: "业务分析",
-      description:
-        "Google Analytics 和 Search Console 集成：实时追踪网站流量、用户行为和增长数据，帮助开发者和企业做出数据驱动的决策。增长追踪：内置追踪工具，监控用户增长和互动，以便进行持续优化，提升用户体验和业务表现。",
-      icon: <ChartNetwork className="w-6 h-6" strokeWidth={1.5} />,
-    },
-    {
-      title: "AI基础设施",
-      description:
-        "预配置 AI 集成：模板提供多种预配置的 AI 集成功能，如文本生成、图像处理等，帮助开发者快速在项目中集成 AI 能力。积分系统与 API 销售：内置积分系统，用户可通过积分获得 AI 服务或购买 API 接口，支持 API 的付费调用，帮助开发者和企业实现盈利。",
-      icon: <BrainCircuit className="w-6 h-6" strokeWidth={1.5} />,
+        "利用 AI 的力量，立即将您的照片转换为高质量、逼真的图像。无论您是需要社交媒体上的新鲜内容、LinkedIn 上的专业照片，还是个人项目中的一组有趣图像。",
+      icon: <Palette className="w-6 h-6" strokeWidth={1.5} />,
     },
   ],
 };
@@ -190,6 +151,53 @@ export const avatars = [
   {
     src: "/avatars/Relaxed Bearded Man with Tattoo at Cozy Cafe.jpeg",
     fallback: "RB",
+  },
+];
+
+export const Images = [
+  {
+    src: img1,
+    alt: "AI generated image",
+  },
+  {
+    src: img2,
+    alt: "AI generated image",
+  },
+  {
+    src: img3,
+    alt: "AI generated image",
+  },
+  {
+    src: img4,
+    alt: "AI generated image",
+  },
+  {
+    src: img5,
+    alt: "AI generated image",
+  },
+  {
+    src: img6,
+    alt: "AI generated image",
+  },
+  {
+    src: img7,
+    alt: "AI generated image",
+  },
+  {
+    src: img8,
+    alt: "AI generated image",
+  },
+  {
+    src: img9,
+    alt: "AI generated image",
+  },
+  {
+    src: img10,
+    alt: "AI generated image",
+  },
+  {
+    src: img11,
+    alt: "AI generated image",
   },
 ];
 

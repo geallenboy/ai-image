@@ -77,7 +77,7 @@
   },
   "home": {
     "navigtion": {
-      "name": "仪表板",
+      "name": "仪表盘",
       "features": "功能",
       "pricing": "定价",
       "faqs": "常见问题",
@@ -90,15 +90,15 @@
     },
     "features": {
       "name": "功能",
-      "title": "用AI SAAS 解锁无限可能",
-      "text": "我们的提供了多种功能，提升您快速落地的想法和AI应用开发。"
+      "title": "用 Pictoria AI 解锁无限可能",
+      "text": "我们的平台提供了多种功能，旨在提升您的图像创作体验。从易于使用的编辑工具到强大的 AI 驱动的图像生成，我们拥有将您的想法变为现实所需的一切。"
     },
     "hero": {
-      "title1": "AI SaaS 模版",
-      "title2": "利用 AI SaaS 模版 快速开发项目",
-      "title3": "集成：支付,登录,supabase等",
+      "title1": "尝试新的 Flux 模型",
+      "title2": "利用 AI 的力量改造您的照片",
+      "title3": "从 LinkedIn 头像到 Instagram 网红照片，Pictoria AI 的尖端技术确保您始终展现最佳状态。轻松创建、编辑和生成图像。",
       "title4": "深受 1000+ 客户喜爱",
-      "title5": "创建您的第一个 AI 应用"
+      "title5": "创建您的第一个 AI 模型"
     },
     "price": {
       "name": "价格",
@@ -111,18 +111,33 @@
       "title7": "包含内容"
     },
     "footer": {
-      "title1": "AI SaaS 公司。保留所有权利。",
+      "title1": "Image AI 公司。保留所有权利。",
       "title2": "服务条款",
       "title3": "隐私政策"
     },
     "review": {
       "title1": "用户评价",
       "title2": "我们的用户怎么说",
-      "title3": "了解为什么成千上万的人选择 AI，轻松生成高质量的照片，从头像到充满活力的社交媒体内容。"
+      "title3": "了解为什么成千上万的人选择 Pictoria AI，轻松生成高质量的照片，从 LinkedIn 头像到充满活力的社交媒体内容。"
+    },
+    "ready": {
+      "title1": "准备好改造您的照片了吗？",
+      "title2": "加入成千上万已经在创建令人惊叹的 AI 生成图像的用户。",
+      "title3": "创建您的第一个 AI 模型"
     }
   },
   "dashboard": {
-    "title": "欢迎回来"
+    "title": "欢迎回来",
+    "statsCards": {
+      "name1": "总生成图片数",
+      "info1": "截至目前生成的图片数量",
+      "name2": "总模型数",
+      "info2": "已训练的自定义模型数量",
+      "name3": "图片生成积分",
+      "info3": "可用的图片生成积分",
+      "name4": "训练积分",
+      "info4": "可用的训练积分"
+    }
   },
   "modelTraining": {
     "title": "训练模型",
@@ -203,5 +218,13 @@
       "selected": "已选择",
       "mostPopular": "最受欢迎"
     }
+  },
+  "gallery": {
+    "title": "我的图像",
+    "desc": "在这里，您可以查看所有生成的图像。点击图像以查看详细信息。"
+  },
+  "model": {
+    "title": "我的模型",
+    "desc": "查看和管理您训练好的模型"
   }
 }

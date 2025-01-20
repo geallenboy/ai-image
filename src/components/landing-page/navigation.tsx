@@ -50,6 +50,12 @@ const NavItemsLeft = () => {
         {homeT("features")}
       </Link>
       <Link
+        href={"#pricing"}
+        className="text-sm font-medium hover:underline underline-offset-4"
+      >
+        {homeT("pricing")}
+      </Link>
+      <Link
         href={"#faqs"}
         className="text-sm font-medium hover:underline underline-offset-4"
       >

@@ -1,13 +1,49 @@
 import React from "react";
 import AnimatedGradientText from "@/components/ui/animated-gradient-text";
+import Marquee from "@/components/ui/marquee";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ChevronRight } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
-import { avatars } from "@/context/home";
+import Image from "next/image";
+import { avatars, Images } from "@/context/home";
 import { useTranslations } from "next-intl";
 
+const MarqueeColumn = ({
+  reverse,
+  duration,
+  className,
+}: {
+  reverse: boolean;
+  duration: string;
+  className?: string;
+}) => {
+  return (
+    <Marquee
+      reverse={reverse}
+      pauseOnHover
+      vertical
+      className={cn(
+        `w-full relative h-full flex flex-col justify-center items-center `,
+        className
+      )}
+      style={{ "--duration": duration } as any}
+    >
+      {Images.sort(() => Math.random() - 0.5).map((image, index) => {
+        return (
+          <Image
+            key={index}
+            src={image.src}
+            alt={image.alt}
+            priority
+            className="w-full h-full object-cover rounded opacity-[.25] hover:opacity-100 transition-opacity duration-300 ease-in-out"
+          />
+        );
+      })}
+    </Marquee>
+  );
+};
 const Hero = () => {
   const heroT = useTranslations("home.hero");
   return (
@@ -54,6 +90,26 @@ const Hero = () => {
             {heroT("title5")}
           </Button>
         </Link>
+      </div>
+      <div className="absolute top-0 w-full grid grid-cols-3 md:grid-col-4 lg:grid-cols-5 xl:grid-cols-6 z-10">
+        <MarqueeColumn reverse={false} duration="120s" />
+        <MarqueeColumn reverse={true} duration="120s" />
+        <MarqueeColumn reverse={false} duration="120s" />
+        <MarqueeColumn
+          reverse={true}
+          duration="120s"
+          className="hidden md:flex"
+        />
+        <MarqueeColumn
+          reverse={false}
+          duration="120s"
+          className="hidden lg:flex"
+        />
+        <MarqueeColumn
+          reverse={true}
+          duration="120s"
+          className="hidden lg:flex"
+        />
       </div>
     </section>
   );
