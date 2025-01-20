@@ -1,0 +1,219 @@
+{
+  "LocaleSwitcher": {
+    "zh": "China",
+    "en": "English",
+    "label": "Language"
+  },
+  "themeConfig": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "app": {
+    "name": "AI SaaS",
+    "textPro": "Pro"
+  },
+  "login": {
+    "loginForm": {
+      "name": "Login",
+      "title1": "Enter your email below to login to your account",
+      "email": "email",
+      "password": "password",
+      "passwordInfo": "Enter your password",
+      "btn": "Submit",
+      "btn1": "Need an account? Sign up",
+      "btn2": "Forgot pasword?",
+      "info1": "signup...",
+      "info2": "login successfully !",
+      "emailMessage": "Please enter a valid email address!",
+      "passwordMessage": "Password must be at least 8 characters long."
+    },
+    "signUpForm": {
+      "name": "Sign Up",
+      "title1": "Enter your inforation below to create an account",
+      "email": "email",
+      "password": "password",
+      "fullNameMessage": "Your name must be at least 3 characters long.",
+      "emailMessage": "Please enter a valid email address!",
+      "passwordString": "Password is required!",
+      "passwordMin": "Password must be at least 8 characters long.",
+      "passwordRegex": "Password must contain 8 characters,1 uppercase letter,1 lowercase letter,1 number and 1 special character",
+      "confirmPasswordInfo": "Confirm passworrd is required!",
+      "passwordRefine": "Passwords don't match",
+      "info1": "signup...",
+      "info2": "Signed up successfully !Plase configm your email address",
+      "fullName": "full name",
+      "fullNameInfo": "Enter your full name",
+      "passwordInfo": "Enter your password",
+      "confirmPassword": "confirm Password",
+      "confirmPasswordEnter": "confirmPassword  your password",
+      "btn1": "Sign up",
+      "btn2": "Already have an account? Log up",
+      "btn3": "By clicing sign up ,you aggree to our",
+      "btn4": "Terms of Service",
+      "btn5": "and",
+      "btn6": "Privacy policy."
+    },
+    "resetPassword": {
+      "name": "Reset Password",
+      "title1": "Enter your email below to rest your password",
+      "email": "email",
+      "emailMessage": "Please enter a valid email address!",
+      "passwordMessage": "Password must be at least 8 characters long.",
+      "password": "password",
+      "infoLoading": "Sending password reset email...",
+      "infoSuccess": "Password reset email sent! Please check your email for instructions",
+      "infoError": "There is an error sending the password reset email",
+      "btn1": "reset password",
+      "btn2": "Back to login"
+    }
+  },
+  "sidebar": {
+    "name": "Platform",
+    "upgrade": "Upgrade",
+    "settings": "Settings",
+    "billing": "Billing"
+  },
+  "home": {
+    "navigtion": {
+      "name": "Dashboard",
+      "features": "Features",
+      "pricing": "Pricing",
+      "faqs": "FAQs",
+      "signup": "Sign up"
+    },
+    "faqs": {
+      "name": "FAQs",
+      "title": "Frequently Asked Questions",
+      "text": "Here are some of the most frequently asked questions about our product."
+    },
+    "features": {
+      "name": "features",
+      "title": " Unlock Unlimited Possibilities with AI",
+      "text": " Our platform offers a wide range of features designed to enhance your image creation experience. From easy-to-use editing tools to powerful AI-powered image generation, we have everything you need to bring your ideas to life."
+    },
+    "hero": {
+      "title1": "Try new flux model",
+      "title2": "Transform your photos with the power of AI",
+      "title3": " From headshots to influencer photos, AI&apos;s state-of-the-art technology ensures you always look your best. Create, edit, and generate images effortlessly.",
+      "title4": "Loved by 1k+ customers",
+      "title5": " Crreate Your First AI Model"
+    },
+    "price": {
+      "name": "price",
+      "title1": "Choose the plan that fits your needs",
+      "title2": "Choose an offordable plan that is packed with the best features for engaging your audience,createing customer loyalty and driving sales. engaging your",
+      "title3": "Monthly",
+      "title4": "Yearly",
+      "title5": "Most Popular",
+      "title6": "Subscribe",
+      "title7": "What's included"
+    },
+    "footer": {
+      "title1": "Image AI Inc. All rights reserved.",
+      "title2": "Tems of Service",
+      "title3": "Privacy Policy"
+    },
+    "review": {
+      "title1": "Testimonials",
+      "title2": "What Our Users Say",
+      "title3": " Discover why thousands are choosing AI for effortless,high-quality photo generation, from LinkedIn headshots to vibrant social media content."
+    },
+    "ready": {
+      "title1": "Ready to Transform Your Photos?",
+      "title2": "Join thousands of users who are already creating amazing AI-generated images.",
+      "title3": "  Create Your First AI Model"
+    }
+  },
+  "dashboard": {
+    "title": "Welcome back"
+  },
+  "modelTraining": {
+    "title": "Train Model",
+    "desc": "Train anew model with yout own image"
+  },
+  "account": {
+    "title": "Account settings",
+    "desc": "Manage your account settings and preferences.",
+    "accountForm": {
+      "name": "Profile",
+      "desc": "Update your personal infomation",
+      "fullName": "fullName",
+      "email": "email",
+      "emailDesc": "Your email address is used for sign in add communication.",
+      "button": "update profile",
+      "infoLoading": "Updating the profile...",
+      "successInfo": "Profile updated successfully",
+      "failedInfo": "profile updated failed"
+    },
+    "changePassword": {
+      "name": "Change Password",
+      "desc": "Enter your new password below to change/update your password.",
+      "password": "password",
+      "loading1": "Changing password...",
+      "loading2": "Change Password",
+      "passwordDesc": "Enter a strong password that meets the requirements above.",
+      "confirmPassword": "confirmPassword",
+      "confirmPasswordDesc": "Re-enter your new password to confirm.",
+      "info": "Make sure to remember your new password or store it securely.",
+      "passwordMessage": "Password must be at least 8 characters long.",
+      "passwordRegex": "Password must contain 8 characters,1 uppercase letter,1 lowercase letter,1 number and 1 special character.",
+      "passwordConfirmPassword": "Confirm password is required!",
+      "passwordRefine": "Password don't match",
+      "infoLoading": "Signing in...",
+      "infoSuccess": "Password is successfully updated"
+    },
+    "securitySetting": {
+      "name": "Security",
+      "password": "Password",
+      "desc": "Change your password to keep your account secure",
+      "button": "Change password",
+      "infoLoading": "Sending password reset email...",
+      "infoSuccess": "Password reset email sent! Please check your email for instructions",
+      "infoError": "There is an error sending the password reset email"
+    }
+  },
+  "billing": {
+    "title": "Plans & Billing",
+    "desc": "Manage your subscription and billing information.",
+    "planSummarry": {
+      "name": "Plan Summary",
+      "name1": "Price/Month",
+      "name2": "Included Credits",
+      "name3": "Renewal Date",
+      "noPlan": "No Plan",
+      "plan": "Plan",
+      "noInfo1": "Image Generation credits left",
+      "noInfo2": "0 rmmaining",
+      "noInfo3": "model training credits left",
+      "noInfo4": "Please upgrade to a plan to continue using the app.",
+      "info1": "Image Generation credits",
+      "info2": "model training credits"
+    },
+    "pricingSheet": {
+      "name": "upgrade",
+      "title": "Change subscription plan",
+      "desc": "choose a plan that fits your needs and budget to continue using our service."
+    },
+    "price": {
+      "btn1": "Manage Subscription",
+      "btn2": "Switch Plan",
+      "btn3": "Subscribe",
+      "infoError1": "An unkniw error occurred",
+      "infoError2": "Please try again laterr or contanct us.",
+      "info1": "Rediecting to stripe portal...",
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "selected": "Selected",
+      "mostPopular": "Most Popular"
+    }
+  },
+  "gallery": {
+    "title": "My Images",
+    "desc": "Here you can see all the images you have generated .Click on an image to view details"
+  },
+  "model": {
+    "title": "My Modles",
+    "desc": "View and manage your trained models"
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "LocaleSwitcher": {
+    "zh": "中文",
+    "en": "英文",
+    "label": "语言"
+  },
+  "themeConfig": {
+    "light": "浅色",
+    "dark": "深色",
+    "system": "系统"
+  },
+
+  "app": {
+    "name": "AI SaaS",
+    "textPro": "专业版"
+  },
+  "login": {
+    "loginForm": {
+      "name": "登录",
+      "title1": "在下方输入您的邮箱以登录您的账户",
+      "email": "邮箱",
+      "password": "密码",
+      "passwordInfo": "请输入您的密码",
+      "btn": "提交",
+      "btn1": "需要账户？注册",
+      "btn2": "忘记密码？",
+      "info1": "正在登录...",
+      "info2": "登录成功！",
+      "emailMessage": "请输入有效的邮箱地址！",
+      "passwordMessage": "密码长度必须至少为 8 个字符。"
+    },
+    "signUpForm": {
+      "name": "注册",
+      "title1": "在下方输入您的信息以创建账户",
+      "email": "邮箱",
+      "password": "密码",
+      "fullNameMessage": "您的姓名长度必须至少为 3 个字符。",
+      "emailMessage": "请输入有效的邮箱地址！",
+      "passwordString": "密码是必填项！",
+      "passwordMin": "密码长度必须至少为 8 个字符。",
+      "passwordRegex": "密码必须包含 8 个字符、1 个大写字母、1 个小写字母、1 个数字和 1 个特殊字符。",
+      "confirmPasswordInfo": "确认密码是必填项！",
+      "passwordRefine": "密码不匹配",
+      "info1": "正在注册...",
+      "info2": "注册成功！请确认您的邮箱地址。",
+      "fullName": "姓名",
+      "fullNameInfo": "请输入您的姓名",
+      "passwordInfo": "请输入您的密码",
+      "confirmPassword": "确认密码",
+      "confirmPasswordEnter": "请确认您的密码",
+      "btn1": "注册",
+      "btn2": "已有账户？登录",
+      "btn3": "点击注册即表示您同意我们的",
+      "btn4": "服务条款",
+      "btn5": "和",
+      "btn6": "隐私政策。"
+    },
+    "resetPassword": {
+      "name": "重置密码",
+      "title1": "在下方输入您的邮箱以重置密码",
+      "email": "邮箱",
+      "emailMessage": "请输入有效的邮箱地址！",
+      "passwordMessage": "密码长度必须至少为 8 个字符。",
+      "password": "密码",
+      "infoLoading": "正在发送密码重置邮件...",
+      "infoSuccess": "密码重置邮件已发送！请查看您的邮箱以获取说明",
+      "infoError": "发送密码重置邮件时出错",
+      "btn1": "重置密码",
+      "btn2": "返回登录"
+    }
+  },
+  "sidebar": {
+    "name": "平台",
+    "upgrade": "升级",
+    "settings": "设置",
+    "billing": "账单"
+  },
+  "home": {
+    "navigtion": {
+      "name": "仪表板",
+      "features": "功能",
+      "pricing": "定价",
+      "faqs": "常见问题",
+      "signup": "注册"
+    },
+    "faqs": {
+      "name": "常见问题",
+      "title": "常见问题解答",
+      "text": "以下是一些关于我们产品的最常见问题。"
+    },
+    "features": {
+      "name": "功能",
+      "title": "用AI SAAS 解锁无限可能",
+      "text": "我们的提供了多种功能，提升您快速落地的想法和AI应用开发。"
+    },
+    "hero": {
+      "title1": "AI SaaS 模版",
+      "title2": "利用 AI SaaS 模版 快速开发项目",
+      "title3": "集成：支付,登录,supabase等",
+      "title4": "深受 1000+ 客户喜爱",
+      "title5": "创建您的第一个 AI 应用"
+    },
+    "price": {
+      "name": "价格",
+      "title1": "选择适合您需求的计划",
+      "title2": "选择一个价格合理的计划，其中包含吸引受众、建立客户忠诚度和推动销售的最佳功能。",
+      "title3": "月度",
+      "title4": "年度",
+      "title5": "最受欢迎",
+      "title6": "订阅",
+      "title7": "包含内容"
+    },
+    "footer": {
+      "title1": "AI SaaS 公司。保留所有权利。",
+      "title2": "服务条款",
+      "title3": "隐私政策"
+    },
+    "review": {
+      "title1": "用户评价",
+      "title2": "我们的用户怎么说",
+      "title3": "了解为什么成千上万的人选择 AI，轻松生成高质量的照片，从头像到充满活力的社交媒体内容。"
+    }
+  },
+  "dashboard": {
+    "title": "欢迎回来"
+  },
+  "modelTraining": {
+    "title": "训练模型",
+    "desc": "使用您自己的图像训练一个新模型"
+  },
+  "account": {
+    "title": "账户设置",
+    "desc": "管理您的账户设置和偏好。",
+    "accountForm": {
+      "name": "个人资料",
+      "desc": "更新您的个人信息",
+      "fullName": "姓名",
+      "email": "邮箱",
+      "emailDesc": "您的邮箱地址用于登录和沟通。",
+      "button": "更新资料",
+      "infoLoading": "正在更新资料...",
+      "successInfo": "资料更新成功",
+      "failedInfo": "资料更新失败"
+    },
+    "changePassword": {
+      "name": "修改密码",
+      "desc": "在下方输入您的新密码以更改/更新密码。",
+      "password": "密码",
+      "loading1": "正在修改密码...",
+      "loading2": "修改密码",
+      "passwordDesc": "请输入一个符合上述要求的强密码。",
+      "confirmPassword": "确认密码",
+      "confirmPasswordDesc": "请重新输入您的新密码以确认。",
+      "info": "请确保记住您的新密码或将其安全保存。",
+      "passwordMessage": "密码长度必须至少为 8 个字符。",
+      "passwordRegex": "密码必须包含 8 个字符、1 个大写字母、1 个小写字母、1 个数字和 1 个特殊字符。",
+      "passwordConfirmPassword": "确认密码是必填项！",
+      "passwordRefine": "密码不匹配",
+      "infoLoading": "正在登录...",
+      "infoSuccess": "密码已成功更新"
+    },
+    "securitySetting": {
+      "name": "安全设置",
+      "password": "密码",
+      "desc": "更改密码以确保您的账户安全",
+      "button": "修改密码",
+      "infoLoading": "正在发送密码重置邮件...",
+      "infoSuccess": "密码重置邮件已发送！请查看您的邮箱以获取说明",
+      "infoError": "发送密码重置邮件时出错"
+    }
+  },
+  "billing": {
+    "title": "计划与账单",
+    "desc": "管理您的订阅和账单信息。",
+    "planSummarry": {
+      "name": "计划概览",
+      "name1": "价格/月",
+      "name2": "包含的积分",
+      "name3": "续订日期",
+      "noPlan": "无计划",
+      "plan": "计划",
+      "noInfo1": "剩余图像生成积分",
+      "noInfo2": "剩余 0",
+      "noInfo3": "剩余模型训练积分",
+      "noInfo4": "请升级计划以继续使用该应用。",
+      "info1": "图像生成积分",
+      "info2": "模型训练积分"
+    },
+    "pricingSheet": {
+      "name": "升级",
+      "title": "更改订阅计划",
+      "desc": "选择一个适合您需求和预算的计划，以继续使用我们的服务。"
+    },
+    "price": {
+      "btn1": "管理订阅",
+      "btn2": "切换计划",
+      "btn3": "订阅",
+      "infoError1": "发生未知错误",
+      "infoError2": "请稍后重试或联系我们。",
+      "info1": "正在跳转到 Stripe 门户...",
+      "monthly": "月度",
+      "yearly": "年度",
+      "selected": "已选择",
+      "mostPopular": "最受欢迎"
+    }
+  }
+}
