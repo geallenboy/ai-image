@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import PricingSheet from "./pricing-sheet";
 import { format } from "date-fns";
+import { useTranslations } from "next-intl";
 
 type Product = Tables<"products">;
 type Price = Tables<"prices">;
@@ -35,44 +36,39 @@ const PlanSummarry = ({
   user,
   products,
 }: PlanSummarryProps) => {
-  console.log(subscription, "subscription:===>");
-  console.log(products, "products:===>");
-  console.log(user, "user:===>");
-  console.log(credits, "credits:===>");
+  const T = useTranslations("billing.planSummarry");
   if (!credits || !subscription || subscription?.status !== "active") {
     return (
       <Card className="max-w-5xl">
         <CardContent className="px-5 py-4 pb-8">
           <h3 className="pb-4 text-base font-semibold flex flex-wrap items-center gap-x-2">
-            <span>Plan Summary</span>
+            <span>{T("name")}</span>
             <Badge variant={"secondary"} className="bg-primary/10">
-              No Plan
+              {T("noPlan")}
             </Badge>
           </h3>
           <div className="grid grid-cols-8 gap-4">
             <div className="col-span-5 flex flex-col pr-12">
               <div className="flex-1 text-sm font-normal flex w-full justify-between pb-1">
                 <span className="font-normal text-muted-foreground ml-1 lowercase">
-                  Image Generation credits left
+                  {T("noInfo1")}
                 </span>
-                <span className="font-medium">0 rmmaining</span>
+                <span className="font-medium"> {T("noInfo2")}</span>
               </div>
               <div className="mb-1 flex items-center">
                 <Progress value={0} className="w-full h-2" />
               </div>
               <div className="flex-1 text-sm font-normal flex w-full justify-between pb-1">
                 <span className="font-normal text-muted-foreground ml-1 lowercase">
-                  model training credits left
+                  {T("noInfo1")}
                 </span>
-                <span className="font-medium">0 rmmaining</span>
+                <span className="font-medium"> {T("noInfo4")}</span>
               </div>
               <div className="mb-1 flex items-center">
                 <Progress value={0} className="w-full h-2" />
               </div>
             </div>
-            <div className="col-span-5 flex flex-col">
-              Please upgrade to a plan to continue using the app.
-            </div>
+            <div className="col-span-5 flex flex-col">{T("noInfo4")}</div>
           </div>
         </CardContent>
         <CardFooter className="border-t border-border px-4 py-3">
@@ -106,16 +102,16 @@ const PlanSummarry = ({
     <Card className="max-w-5xl">
       <CardContent className="px-5 py-4 pb-8">
         <h3 className="pb-4 text-base font-semibold flex flex-wrap items-center gap-x-2">
-          <span>Plan Summary</span>
+          <span>{T("name")}</span>
           <Badge variant={"secondary"} className="bg-primary/10">
-            {subscriptionProduct?.name} Plan
+            {subscriptionProduct?.name} {T("plan")}
           </Badge>
         </h3>
         <div className="grid grid-cols-3 xl:grid-cols-8 gap-4">
           <div className="col-span-full xl:col-span-5 flex flex-col xl:pr-12">
             <div className="flex-1 text-sm font-normal flex w-full justify-between items-center">
               <span className="font-normal text-muted-foreground ml-1 lowercase">
-                Image Generation credits
+                {T("info1")}
               </span>
               <span className="font-medium text-base">
                 {imageGenerationCount}/{maxImageGenerationCount}
@@ -131,7 +127,7 @@ const PlanSummarry = ({
           <div className="col-span-full xl:col-span-5 flex flex-col xl:pr-12">
             <div className="flex-1 text-sm font-normal flex w-full justify-between items-center">
               <span className="font-normal text-muted-foreground ml-1 lowercase">
-                model training credits
+                {T("info2")}
               </span>
               <span className="font-medium text-base">
                 {modelTrainingCount}/{maxModelTrainingCount}
@@ -146,19 +142,19 @@ const PlanSummarry = ({
           </div>
           <div className="col-span-full xl:col-span-3 flex flex-row justify-between flex-wrap">
             <div className="flex flex-col pb-0">
-              <div className="text-sm font-normal">Price/Month</div>
+              <div className="text-sm font-normal">{T("name1")}</div>
               <div className="flex-1 pt-1 text-sm font-medium">
                 {priceString}
               </div>
             </div>
             <div className="flex flex-col pb-0">
-              <div className="text-sm font-normal">Included Credits</div>
+              <div className="text-sm font-normal">{T("name2")}</div>
               <div className="flex-1 pt-1 text-sm font-medium">
                 {maxImageGenerationCount}
               </div>
             </div>
             <div className="flex flex-col pb-0">
-              <div className="text-sm font-normal">Renewal Date</div>
+              <div className="text-sm font-normal">{T("name3")}</div>
               <div className="flex-1 pt-1 text-sm font-medium">
                 {format(
                   new Date(subscription.current_period_end),

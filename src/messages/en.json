@@ -137,11 +137,60 @@
       "info3": "Available generation credits",
       "name4": "Training Credits",
       "info4": "Available training credits"
+    },
+    "recentImage": {
+      "title": "Recent Generations",
+      "info": "No images generated yet!",
+      "name": "View galler"
+    },
+    "recentModels": {
+      "title": "Recent Models",
+      "desc": "Get started with common actions",
+      "info": "No models trained yet"
+    },
+    "quickAction": {
+      "title": "Quick Actions",
+      "desc": "Get started with common actions",
+      "name1": "Generate Image",
+      "name2": "Train New Model",
+      "name3": "Billing"
     }
   },
   "modelTraining": {
     "title": "Train Model",
-    "desc": "Train anew model with yout own image"
+    "desc": "Train anew model with yout own image",
+
+    "settings": {
+      "name": "Model",
+      "nameVal": "Enter model name",
+      "button": "Submit",
+      "desc": "This will be the name of your trained model",
+      "value1": "please select the gender of the images",
+      "male": "Male",
+      "female": "Female",
+      "info1": "Training Data(Zip File)",
+      "info2": " Read the requirements below",
+      "info3": "• Provide 10, 12 or 15 images in total",
+      "info4": "• Ideal breakdown for 12 images:",
+      "info5": "- 6 face closeups",
+      "info6": "- 3/4 half body closeups (till stomach)",
+      "info7": "- 2/3 full body shots",
+      "info8": "• No accessories on face/head ideally",
+      "info9": "• No other people in images",
+      "info10": "• Different expressions, clothing, backgrounds with good lighting",
+      "info11": "• Images to be in 1:1 resolution (1048x1048 or higher)",
+      "info12": "• Use images of similar age group (ideally within past few months)",
+      "info13": "• Provide only zip file (under 45MB size)",
+      "info14": "Upload a zip file containing your training images (max 45MB)"
+    },
+    "info": {
+      "infoLoading": "Uploading file...",
+      "infoError1": "Failed to upload the file",
+      "infoError2": "Upload Failed",
+      "infoSuccess": "File upload successfully!",
+      "infoTraining": "Initiating model training...!",
+      "infoTrainingSuccess": "Training started successfully! You'll recelve a notification once it gets completed!"
+    }
   },
   "account": {
     "title": "Account settings",
@@ -226,5 +275,44 @@
   "model": {
     "title": "My Modles",
     "desc": "View and manage your trained models"
+  },
+  "imageGeneration": {
+    "settings": {
+      "name": "Settings",
+      "model": "Model",
+      "modelInfo": "You can select any model from the dropdown menu.",
+      "aspectRatio": "Aspect Ratio",
+      "aspectRatioVal": "Select a aspect ratio",
+      "aspectRatioInfo": "Aspect ratio for the genearted image.",
+      "numOfOutputs": "Num of outputs",
+      "numOfOutputsInfo": "Total number of output images to generate.",
+      "guidance": "Guidance",
+      "guidanceInfo": "Prompt guidence for generated image.",
+      "numInferenceSteps": "Num inference steps",
+      "numInferenceStepsInfo": " Number of denoising steps. Recommended range is 28-50 for dev model and 1-4 for schnell model.",
+      "outputQuality": "Output Quality",
+      "outputQualityInfo": "Quality when sabing the output image. from 0 to 100 is best quality, 0 is lowest quality.",
+      "outputFormat": "Output format",
+      "outputFormatInfo": "Format of the output images.",
+      "prompt": "Prompt",
+      "promptInfo": "Prompt for generated images."
+    },
+    "formSchema": {
+      "model": "model is required!",
+      "prompt": "prompt is required!",
+      "aspectRatio": "aspect_ratio is required!",
+      "outputFormat": "output_format is required!",
+      "guidanceMin": "guidance of outputs should be atleast 1.",
+      "guidanceMax": "guidance of outputs must be les then 10.",
+      "numOutputsMin": "Number of outputs should be atleast 1.",
+      "numOutputsMax": "Number of outputs must be les then 4.",
+      "numInferenceStepsMin": "Number of inference steps should be atleast 1.",
+      "numInferenceStepsMax": "Number of inference steps must be les then or equal to 50.",
+      "outputQualityMin": "Output quality of outputs should be atleast 1.",
+      "outputQualityMax": "Output quality of outputs must be les then 100."
+    },
+    "generatedImages": {
+      "name": "No images generated"
+    }
   }
 }

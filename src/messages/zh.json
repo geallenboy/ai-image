@@ -137,11 +137,59 @@
       "info3": "可用的图片生成积分",
       "name4": "训练积分",
       "info4": "可用的训练积分"
+    },
+    "recentImage": {
+      "title": "最近生成的图片",
+      "info": "尚未生成任何图片！",
+      "name": "查看图库"
+    },
+    "recentModels": {
+      "title": "最近的模型",
+      "desc": "从常见操作开始",
+      "info": "尚未训练任何模型"
+    },
+    "quickAction": {
+      "title": "快速操作",
+      "desc": "从常见操作开始",
+      "name1": "生成图片",
+      "name2": "训练新模型",
+      "name3": "账单"
     }
   },
   "modelTraining": {
     "title": "训练模型",
-    "desc": "使用您自己的图像训练一个新模型"
+    "desc": "使用您自己的图像训练一个新模型",
+    "settings": {
+      "name": "模型名称",
+      "nameVal": "请输入模型名称",
+      "button": "提交",
+      "desc": "这将是您训练模型的名称",
+      "value1": "请选择图像的性别",
+      "male": "男性",
+      "female": "女性",
+      "info1": "训练数据（Zip 文件）",
+      "info2": "请阅读以下要求",
+      "info3": "• 提供 10、12 或 15 张图片",
+      "info4": "• 12 张图片的理想分布：",
+      "info5": "- 6 张面部特写",
+      "info6": "- 3/4 张半身特写（到腹部）",
+      "info7": "- 2/3 张全身照",
+      "info8": "• 面部/头部最好不要有饰品",
+      "info9": "• 图片中不要有其他人",
+      "info10": "• 不同的表情、服装、背景和良好的光线",
+      "info11": "• 图片分辨率应为 1:1（1048x1048 或更高）",
+      "info12": "• 使用相似年龄段的图片（最好是最近几个月内的）",
+      "info13": "• 仅提供 zip 文件（大小不超过 45MB）",
+      "info14": "上传包含训练图片的 zip 文件（最大 45MB）"
+    },
+    "info": {
+      "infoLoading": "文件上传中...",
+      "infoError1": "文件上传失败",
+      "infoError2": "上传失败",
+      "infoSuccess": "文件上传成功！",
+      "infoTraining": "正在启动模型训练...！",
+      "infoTrainingSuccess": "训练已成功启动！训练完成后您将收到通知！"
+    }
   },
   "account": {
     "title": "账户设置",
@@ -226,5 +274,45 @@
   "model": {
     "title": "我的模型",
     "desc": "查看和管理您训练好的模型"
+  },
+  "imageGeneration": {
+    "settings": {
+      "name": "设置",
+      "model": "模型",
+      "modelInfo": "您可以从下拉菜单中选择任意模型。",
+      "aspectRatio": "宽高比",
+      "aspectRatioVal": "选择宽高比",
+      "aspectRatioInfo": "生成图片的宽高比。",
+      "numOfOutputs": "输出数量",
+      "numOfOutputsInfo": "生成图片的总数量。",
+      "guidance": "引导强度",
+      "guidanceInfo": "生成图片时的提示词引导强度。",
+      "numInferenceSteps": "推理步数",
+      "numInferenceStepsInfo": "去噪步骤的数量。推荐范围：dev 模型为 28-50，schnell 模型为 1-4。",
+      "outputQuality": "输出质量",
+      "outputQualityInfo": "保存输出图片的质量。0 到 100 为最佳质量，0 为最低质量。",
+      "outputFormat": "输出格式",
+      "outputFormatInfo": "输出图片的格式。",
+      "prompt": "提示词",
+      "promptInfo": "生成图片的提示词。"
+    },
+    "formSchema": {
+      "model": "模型是必填项！",
+      "prompt": "提示词是必填项！",
+      "aspectRatio": "宽高比是必填项！",
+      "outputFormat": "输出格式是必填项！",
+      "guidanceMin": "引导强度至少为 1。",
+      "guidanceMax": "引导强度必须小于 10。",
+      "numOutputsMin": "输出数量至少为 1。",
+      "numOutputsMax": "输出数量必须小于 4。",
+      "numInferenceStepsMin": "推理步数至少为 1。",
+      "numInferenceStepsMax": "推理步数必须小于或等于 50。",
+      "outputQualityMin": "输出质量至少为 1。",
+      "outputQualityMax": "输出质量必须小于 100。"
+    },
+
+    "generatedImages": {
+      "name": "没有图片生成"
+    }
   }
 }

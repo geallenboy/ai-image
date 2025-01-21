@@ -65,7 +65,10 @@ export const generateImageAction = async (input: (z.infer<typeof ImageGeneration
         };
 
     try {
+        console.log("userInput:", userInput)
+        console.log("input.model:", input.model)
         const output = await replicate.run(input.model as `${string}/${string}`, { input: userInput });
+
         console.log(output);
         return {
             error: null,
@@ -182,7 +185,7 @@ export const getImagesAction = async (limit?: number) => {
     }
     const imageWithUrl = await Promise.all(
         data.map(async (image: Database["public"]["Tables"]["generated_images"]["Insert"]) => {
-            const { data: selData, error: selError } = await supabase.storage.from("generated_images").createSignedUrl(`bd4fd995-523b-4dee-a2b6-96d3fb70f904/image_0a9ef9b8-3ce8-48b1-9e6b-f7b04b8ef315.jpg`, 3600)
+            const { data: selData, error: selError } = await supabase.storage.from("generated_images").createSignedUrl(`${user.id}/${image.image_name}`, 3600)
             console.log(selData, 1000, selError)
             return {
                 ...image,
@@ -191,9 +194,7 @@ export const getImagesAction = async (limit?: number) => {
         })
 
     )
-    console.log("data:", data)
-    console.log("user.id:", user.id)
-    console.log("imageWithUrl:", imageWithUrl)
+
     return {
         error: null,
         success: true,

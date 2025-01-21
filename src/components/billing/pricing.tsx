@@ -12,6 +12,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { getErrorRedirect } from "@/lib/helpers";
 import { getStripe } from "@/lib/stripe/client";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
 
 type Product = Tables<"products">;
 type Price = Tables<"prices">;
@@ -54,7 +55,6 @@ const renderPricingButton = ({
   hanleStripePortalRequest: () => Promise<void>;
   hanleStripeCheckout: (price: Price) => Promise<void>;
 }) => {
-  //case1:user has sactive sub for this product
   if (
     user &&
     subscription &&
@@ -128,7 +128,7 @@ const Pricing = ({
   const [billingInterval, setBillingInterval] = useState("month");
   const currentPath = usePathname();
   const router = useRouter();
-  console.log(products, subscription);
+  const T = useTranslations("billing.price");
   const hanleStripeCheckout = async (price: Price) => {
     console.log("Handle stripe checkout function:", price);
     if (!user) {

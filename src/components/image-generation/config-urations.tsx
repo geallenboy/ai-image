@@ -32,62 +32,44 @@ import { Info } from "lucide-react";
 
 import useGeneratedStore from "@/store/useGeneratedStore.ts";
 import { Tables } from "@datatypes.types";
-
-/**
- * prompt: "black forest gateau cake spelling out the words \"FLUX DEV\", tasty, food photography, dynamic shot",
-  go_fast: true,
-  guidance: 3.5,
-  megapixels: "1",
-  num_outputs: 1,
-  aspect_ratio: "1:1",
-  output_format: "webp",
-  output_quality: 80,
-  prompt_strength: 0.8,
-  num_inference_steps: 28
- */
-export const ImageGenerationFormSchema = z.object({
-  model: z.string({
-    required_error: "Model is required!",
-  }),
-  prompt: z.string({
-    required_error: "Prompt is required!",
-  }),
-  guidance: z
-    .number()
-    .min(1, { message: "guidance of outputs should be atleast 1." })
-    .max(10, { message: "guidance of outputs must be les then 10." }),
-  num_outputs: z
-    .number()
-    .min(1, { message: "Number of outputs should be atleast 1." })
-    .max(4, { message: "Number of outputs must be les then 4." }),
-  aspect_ratio: z.string({
-    required_error: "aspect_ratio is required!",
-  }),
-  output_format: z.string({
-    required_error: "output_format is required!",
-  }),
-  output_quality: z
-    .number()
-    .min(1, { message: "Output quality should be atleast 1." })
-    .max(100, { message: "Output quality must be les then or equal to 100." }),
-  num_inference_steps: z
-    .number()
-    .min(1, { message: "Number of inference steps should be atleast 1." })
-    .max(50, {
-      message: "Number of inference steps must be les then or equal to 50.",
-    }),
-});
+import { useTranslations } from "next-intl";
 
 interface ConfiguratinsPros {
   userModels: Tables<"models">[];
   model_id?: string;
 }
 
+export const ImageGenerationFormSchema = () => {
+  const formSchemaT = useTranslations("imageGeneration.formSchema");
+  return z.object({
+    model: z.string({ required_error: formSchemaT("model") }),
+    prompt: z.string({ required_error: formSchemaT("prompt") }),
+    guidance: z
+      .number()
+      .min(1, { message: formSchemaT("guidanceMin") })
+      .max(10, { message: formSchemaT("guidanceMax") }),
+    num_outputs: z
+      .number()
+      .min(1, { message: formSchemaT("numOutputsMin") })
+      .max(4, { message: formSchemaT("numOutputsMax") }),
+    aspect_ratio: z.string({ required_error: formSchemaT("aspectRatio") }),
+    output_format: z.string({ required_error: formSchemaT("outputFormat") }),
+    output_quality: z
+      .number()
+      .min(1, { message: formSchemaT("outputQualityMin") })
+      .max(100, { message: formSchemaT("outputQualityMax") }),
+    num_inference_steps: z
+      .number()
+      .min(1, { message: formSchemaT("numInferenceStepsMin") })
+      .max(50, { message: formSchemaT("numInferenceStepsMax") }),
+  });
+};
 const Configurations = ({ userModels, model_id }: ConfiguratinsPros) => {
   const generateImageStore = useGeneratedStore((state) => state.generateImage);
+  const settingsT = useTranslations("imageGeneration.settings");
 
-  const form = useForm<z.infer<typeof ImageGenerationFormSchema>>({
-    resolver: zodResolver(ImageGenerationFormSchema),
+  const form = useForm({
+    resolver: zodResolver(ImageGenerationFormSchema()), // 动态调用 Schema 函数
     defaultValues: {
       model: model_id ? `geallenboy/${model_id}` : "black-forest-labs/flux-dev",
       prompt: "",
@@ -100,7 +82,7 @@ const Configurations = ({ userModels, model_id }: ConfiguratinsPros) => {
     },
   });
   const onSubmit = async (
-    values: z.infer<typeof ImageGenerationFormSchema>
+    values: z.infer<ReturnType<typeof ImageGenerationFormSchema>>
   ) => {
     console.log(values);
     const newValues = {
@@ -144,20 +126,22 @@ const Configurations = ({ userModels, model_id }: ConfiguratinsPros) => {
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <fieldset className="grid gap-6 p-4 bg-background rounded-lg border">
-            <legend className="text-sm -ml-1 px-1 font-medium">Settings</legend>
+            <legend className="text-sm -ml-1 px-1 font-medium">
+              {settingsT("name")}
+            </legend>
             <FormField
               control={form.control}
               name="model"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className="flex items-center gap-1">
-                    Model
+                    {settingsT("model")}
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <Info className="w-4 h-4" />
                       </TooltipTrigger>
                       <TooltipContent>
-                        <p>You can select any model from the dropdown menu.</p>
+                        <p>{settingsT("modelInfo")}</p>
                       </TooltipContent>
                     </Tooltip>
                   </FormLabel>
@@ -202,13 +186,13 @@ const Configurations = ({ userModels, model_id }: ConfiguratinsPros) => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="flex items-center gap-1">
-                      Aspect Ratio
+                      {settingsT("aspectRatio")}
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <Info className="w-4 h-4" />
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p>Aspect ratio for the genearted image.</p>
+                          <p> {settingsT("aspectRatioInfo")}</p>
                         </TooltipContent>
                       </Tooltip>
                     </FormLabel>
@@ -218,7 +202,7 @@ const Configurations = ({ userModels, model_id }: ConfiguratinsPros) => {
                     >
                       <FormControl>
                         <SelectTrigger>
-                          <SelectValue placeholder="Select a aspect ratio" />
+                          <SelectValue placeholder={settingsT("aspectRatio")} />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
@@ -246,13 +230,13 @@ const Configurations = ({ userModels, model_id }: ConfiguratinsPros) => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="flex items-center gap-1">
-                      Num of outputs
+                      {settingsT("numOfOutputs")}
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <Info className="w-4 h-4" />
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p>Total number of output images to generate.</p>
+                          <p> {settingsT("numOfOutputsInfo")}</p>
                         </TooltipContent>
                       </Tooltip>
                     </FormLabel>
@@ -279,13 +263,13 @@ const Configurations = ({ userModels, model_id }: ConfiguratinsPros) => {
                 <FormItem>
                   <FormLabel className="flex justify-between">
                     <div className="flex items-center gap-1">
-                      Guidance
+                      {settingsT("guidance")}
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <Info className="w-4 h-4" />
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p>Prompt guidence for generated image.</p>
+                          <p> {settingsT("guidanceInfo")}</p>
                         </TooltipContent>
                       </Tooltip>
                     </div>
@@ -311,16 +295,13 @@ const Configurations = ({ userModels, model_id }: ConfiguratinsPros) => {
                 <FormItem>
                   <FormLabel className="flex justify-between">
                     <div className="flex items-center gap-1">
-                      Num inference steps
+                      {settingsT("numInferenceSteps")}
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <Info className="w-4 h-4" />
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p>
-                            Number of denoising steps. Recommended range is
-                            28-50 for dev model and 1-4 for schnell model.
-                          </p>
+                          <p> {settingsT("numInferenceStepsInfo")}</p>
                         </TooltipContent>
                       </Tooltip>
                     </div>
@@ -351,16 +332,13 @@ const Configurations = ({ userModels, model_id }: ConfiguratinsPros) => {
                 <FormItem>
                   <FormLabel className="flex justify-between">
                     <div className="flex items-center gap-1">
-                      Output Quality
+                      {settingsT("outputQuality")}
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <Info className="w-4 h-4" />
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p>
-                            Quality when sabing the output image. from 0 to 100
-                            is best quality, 0 is lowest quality.
-                          </p>
+                          <p>{settingsT("outputQualityInfo")}</p>
                         </TooltipContent>
                       </Tooltip>
                     </div>
@@ -385,13 +363,13 @@ const Configurations = ({ userModels, model_id }: ConfiguratinsPros) => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className="flex items-center gap-1">
-                    Output format
+                    {settingsT("outputFormat")}
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <Info className="w-4 h-4" />
                       </TooltipTrigger>
                       <TooltipContent>
-                        <p>Format of the output images.</p>
+                        <p>{settingsT("outputFormatInfo")}</p>
                       </TooltipContent>
                     </Tooltip>
                   </FormLabel>
@@ -421,13 +399,13 @@ const Configurations = ({ userModels, model_id }: ConfiguratinsPros) => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className="flex items-center gap-1">
-                    Prompt
+                    {settingsT("prompt")}
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <Info className="w-4 h-4" />
                       </TooltipTrigger>
                       <TooltipContent>
-                        <p>Prompt for generated images.</p>
+                        <p> {settingsT("promptInfo")}</p>
                       </TooltipContent>
                     </Tooltip>
                   </FormLabel>

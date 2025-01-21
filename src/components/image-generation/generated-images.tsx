@@ -10,15 +10,16 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import useGeneratedStore from "@/store/useGeneratedStore.ts";
+import { useTranslations } from "next-intl";
 
 const GeneratedImages = () => {
   const images = useGeneratedStore((state) => state.images);
-
+  const generatedImagesT = useTranslations("imageGeneration.generatedImages");
   if (images.length === 0) {
     return (
       <Card className="w-full max-w-2xl bg-muted">
         <CardContent className="flex relative aspect-square items-center justify-center p-6">
-          <span>No images generated</span>
+          <span>{generatedImagesT("name")}</span>
         </CardContent>
       </Card>
     );

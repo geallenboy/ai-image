@@ -13,6 +13,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 /**
  *  & {
@@ -24,16 +25,16 @@ interface RecetImagesProps {
 }
 
 const RecentImage = ({ images }: RecetImagesProps) => {
+  const recentImageT = useTranslations("dashboard.recentImage");
+
   if (images.length === 0) {
     return (
       <Card className="col-span-3">
         <CardHeader>
-          <CardTitle>Recent Generations</CardTitle>
+          <CardTitle>{recentImageT("title")}</CardTitle>
         </CardHeader>
         <CardContent className="flex items-center justify-center">
-          <p className="text-muted-foreground mt-16">
-            No images generated yet!
-          </p>
+          <p className="text-muted-foreground mt-16">{recentImageT("info")}</p>
         </CardContent>
       </Card>
     );
@@ -42,7 +43,7 @@ const RecentImage = ({ images }: RecetImagesProps) => {
   return (
     <Card className="col-span-full xl:col-span-3">
       <CardHeader>
-        <CardTitle>Recent Generations</CardTitle>
+        <CardTitle>{recentImageT("title")}</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         <Carousel className="w-full ">
@@ -82,7 +83,7 @@ const RecentImage = ({ images }: RecetImagesProps) => {
         <div className="flex justify-end">
           <Link href={"/gallery"}>
             <Button variant={"ghost"}>
-              View galler
+              {recentImageT("name")}
               <ArrowRight className="w-4 h-4" />
             </Button>
           </Link>
