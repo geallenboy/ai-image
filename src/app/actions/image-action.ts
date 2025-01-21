@@ -20,7 +20,7 @@ interface ImageResponse {
     data: any | null;
 }
 
-export const generateImageAction = async (input: (z.infer<typeof ImageGenerationFormSchema>)): Promise<ImageResponse> => {
+export const generateImageAction = async (input: z.infer<ReturnType<typeof ImageGenerationFormSchema>>): Promise<ImageResponse> => {
 
     if (!process.env.REPLICATE_API_TOKEN) {
         return {

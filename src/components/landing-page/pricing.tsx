@@ -106,7 +106,7 @@ const Pricing = ({ products, mostPopularProduct = "Pro" }: PricingProps) => {
                       /{billingInterval}
                     </span>
                   </p>
-                  <Link href={"/login?state-signup"}>
+                  <Link href={"/login"}>
                     <Button
                       className="mt-8 w-full font-semibold"
                       variant={

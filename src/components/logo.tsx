@@ -6,7 +6,7 @@ export const Logo = () => {
   return (
     <Link href={"/"} className="flex items-center gap-2">
       <Sparkles strokeWidth={1.5} />
-      <span className="text-lg font-semibold">AI SAAS</span>
+      <span className="text-lg font-semibold">AI Image</span>
     </Link>
   );
 };

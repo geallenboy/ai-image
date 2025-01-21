@@ -20,12 +20,12 @@ import avatar6 from "@/public/avatars/Relaxed Bearded Man with Tattoo at Cozy Ca
 export const faqsList: any = {
   en: [
     {
-      question: "How does Pictoria AI work?",
+      question: "How does AI Image work?",
       answer:
-        "Pictoria AI uses advanced machine learning algorithms to analyze and understand your photos. It then generates new images based on your features and the scenarios you choose, creating realistic and personalized results.",
+        "AI Image uses advanced machine learning algorithms to analyze and understand your photos. It then generates new images based on your features and the scenarios you choose, creating realistic and personalized results.",
     },
     {
-      question: "Is my data safe with Pictoria AI?",
+      question: "Is my data safe with AI Image?",
       answer:
         "Yes, we take data privacy very seriously. All uploaded photos and generated images are encrypted and stored securely. We never share your personal data or images with third parties without your explicit consent.",
     },
@@ -35,7 +35,7 @@ export const faqsList: any = {
         "For optimal results, we recommend uploading at least 10-20 diverse photos of yourself. This helps our AI model better understand your features and expressions, leading to more accurate and realistic generated images.",
     },
     {
-      question: "Can I use Pictoria AI for commercial purposes?",
+      question: "Can I use AI Image for commercial purposes?",
       answer:
         "Yes, our Pro and Enterprise plans include commercial usage rights for the images you generate. However, please note that you should always respect copyright and privacy laws when using AI-generated images.",
     },
@@ -52,12 +52,12 @@ export const faqsList: any = {
   ],
   zh: [
     {
-      question: "Pictoria AI 是如何工作的？",
+      question: "AI Image 是如何工作的？",
       answer:
-        "Pictoria AI 使用先进的机器学习算法来分析和理解您的照片。然后，它根据您的特征和您选择的场景生成新的图像，创造出逼真且个性化的结果。",
+        "AI Image 使用先进的机器学习算法来分析和理解您的照片。然后，它根据您的特征和您选择的场景生成新的图像，创造出逼真且个性化的结果。",
     },
     {
-      question: "我的数据在 Pictoria AI 中安全吗？",
+      question: "我的数据在 AI Image 中安全吗？",
       answer:
         "是的，我们非常重视数据隐私。所有上传的照片和生成的图像都会加密并安全存储。未经您的明确同意，我们绝不会与第三方共享您的个人数据或图像。",
     },
@@ -67,7 +67,7 @@ export const faqsList: any = {
         "为了获得最佳效果，我们建议至少上传 10-20 张您的多样化照片。这有助于我们的 AI 模型更好地理解您的特征和表情，从而生成更准确和逼真的图像。",
     },
     {
-      question: "我可以将 Pictoria AI 用于商业用途吗？",
+      question: "我可以将 AI Image 用于商业用途吗？",
       answer:
         "可以，我们的 Pro 和 Enterprise 计划包含您生成的图像的商业使用权。但请注意，在使用 AI 生成的图像时，您应始终遵守版权和隐私法律。",
     },

@@ -9,8 +9,8 @@ import "./globals.css";
 const MyAppFont = Nunito({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "AI Saas",
-  description: "AI Saas Template",
+  title: "AI Image",
+  description: "AI Image",
 };
 
 export default async function RootLayout({

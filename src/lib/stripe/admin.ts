@@ -198,8 +198,23 @@ const copyBillingDetailsToCustomer = async (
     const customer = payment_method.customer as string;
     const { name, phone, address } = payment_method.billing_details;
     if (!name || !phone || !address) return;
-    //@ts-expect-error
-    await stripe.customers.update(customer, { name, phone, address });
+    // 添加正确的类型定义来避免类型错
+    // 处理 address 中可能存在的 null 值，转换为 undefined
+    const sanitizedAddress = address ? {
+        ...address,
+        city: address.city || undefined,
+        country: address.country || undefined,
+        line1: address.line1 || undefined,
+        line2: address.line2 || undefined,
+        postal_code: address.postal_code || undefined,
+        state: address.state || undefined
+    } : undefined;
+
+    await stripe.customers.update(customer, {
+        name: name || undefined,
+        phone: phone || undefined,
+        address: sanitizedAddress
+    });
     const { error: updateError } = await supabaseAdmin
         .from('users')
         .update({
@@ -235,12 +250,11 @@ const manageSubscriptionStatusChange = async (
         id: subscription.id,
         user_id: uuid,
         metadata: subscription.metadata,
-        // @ts-ignore
-        status: subscription.status,
+        // 将 subscription.status 转换为符合目标类型的值
+        status: subscription.status as "active" | "canceled" | "incomplete" | "incomplete_expired" | "past_due" | "trialing" | "unpaid" | null | undefined,
         price_id: subscription.items.data[0].price.id,
-        //TODO check quantity on subscription
-        // @ts-ignore
-        quantity: subscription.quantity,
+        // 处理 quantity 属性不存在的情况
+        quantity: subscription.items.data[0].quantity,
         cancel_at_period_end: subscription.cancel_at_period_end,
         cancel_at: subscription.cancel_at
             ? toDateTime(subscription.cancel_at).toISOString()
@@ -275,10 +289,9 @@ const manageSubscriptionStatusChange = async (
         `Inserted/updated subscription [${subscription.id}] for user [${uuid}]`
     );
 
-    // For a new subscription copy the billing details to the customer object.
-    // NOTE: This is a costly operation and should happen at the very end.
+
     if (createAction && subscription.default_payment_method && uuid)
-        //@ts-ignore
+
         await copyBillingDetailsToCustomer(
             uuid,
             subscription.default_payment_method as Stripe.PaymentMethod

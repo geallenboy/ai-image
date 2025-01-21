@@ -10,7 +10,7 @@
     "system": "System"
   },
   "app": {
-    "name": "AI SaaS",
+    "name": "AI Image",
     "textPro": "Pro"
   },
   "login": {
@@ -89,15 +89,15 @@
     },
     "features": {
       "name": "features",
-      "title": " Unlock Unlimited Possibilities with Pictoria AI",
+      "title": " Unlock Unlimited Possibilities with AI Image",
       "text": " Our platform offers a wide range of features designed to enhance your image creation experience. From easy-to-use editing tools to powerful AI-powered image generation, we have everything you need to bring your ideas to life."
     },
     "hero": {
       "title1": "Try new flux model",
       "title2": "Transform your photos with the power of AI",
-      "title3": " From LinkedIn headshots to Instagram influencer photos, Pictoria AI&apos;s state-of-the-art technology ensures you always look your best. Create, edit, and generate images effortlessly.",
+      "title3": " From headshots to influencer photos, AI Image &apos;s state-of-the-art technology ensures you always look your best. Create, edit, and generate images effortlessly.",
       "title4": "Loved by 1k+ customers",
-      "title5": " Crreate Your First AI Model"
+      "title5": " Crreate Your First AI Image"
     },
     "price": {
       "name": "price",
@@ -117,7 +117,7 @@
     "review": {
       "title1": "Testimonials",
       "title2": "What Our Users Say",
-      "title3": " Discover why thousands are choosing Pictoria AI for effortless,high-quality photo generation, from LinkedIn headshots to vibrant social media content."
+      "title3": " Discover why thousands are choosing AI Image for effortless,high-quality photo generation, from LinkedIn headshots to vibrant social media content."
     },
     "ready": {
       "title1": "Ready to Transform Your Photos?",

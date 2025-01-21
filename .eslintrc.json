@@ -8,8 +8,7 @@
       "error",
       {
         "ts-ignore": true,
-        "ts-expect-error": true,
-        "minimumDescriptionLength": 3
+        "ts-expect-error": true
       }
     ]
   }

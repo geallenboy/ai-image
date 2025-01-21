@@ -55,9 +55,9 @@ export async function POST(request: NextRequest) {
             throw new Error("Failed to get the file URL")
         }
         console.log(fileUrl)
-        //create model first
-        // const hardware = await replicate.hardware.list()
-        // console.log("hardware:", hardware)
+
+
+
         const modelId = `${user.id}_${Date.now()}_${input.modelName.toLowerCase().replaceAll(" ", "_")}`
         await replicate.models.create("geallenboy", modelId, {
             visibility: "private",
@@ -118,7 +118,7 @@ export async function POST(request: NextRequest) {
 
     } catch (error) {
         console.log("Training Error:", error)
-        const errorMessage = error instanceof Error ? error.message : "Failed to starrt the model training"
+        const errorMessage = error instanceof Error ? error.message : "Failed to start the model training"
         return NextResponse.json({
             error: errorMessage
         }, { status: 500 })
