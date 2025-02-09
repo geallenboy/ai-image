@@ -81,6 +81,9 @@
       "features": "功能",
       "pricing": "定价",
       "faqs": "常见问题",
+      "aboutMe": "关于我",
+      "github": "Github",
+      "signin": "登录",
       "signup": "注册"
     },
     "faqs": {

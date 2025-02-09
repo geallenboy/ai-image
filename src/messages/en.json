@@ -80,6 +80,9 @@
       "features": "Features",
       "pricing": "Pricing",
       "faqs": "FAQs",
+      "aboutMe": "AboutMe",
+      "github": "Github",
+      "signin": "signin",
       "signup": "Sign up"
     },
     "faqs": {

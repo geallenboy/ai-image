@@ -15,7 +15,7 @@ const LoginImage = () => {
         fill
         className="w-full h-full object-cover"
       />
-      <div className="relative z-20 flex items-center">
+      <div className="relative z-20 flex items-center p-5 text-white">
         <Logo />
       </div>
     </div>

@@ -30,10 +30,10 @@ const NavItemsRight = ({ user }: { user: any }) => {
         </Link>
       ) : (
         <Link
-          href={"/login?state=signup"}
+          href={"/login"}
           className="text-sm font-medium hover:underline underline-offset-4"
         >
-          <Button variant={"outline"}> {homeT("signup")}</Button>
+          <Button variant={"outline"}> {homeT("signin")}</Button>
         </Link>
       )}
     </>
@@ -60,6 +60,18 @@ const NavItemsLeft = () => {
         className="text-sm font-medium hover:underline underline-offset-4"
       >
         {homeT("faqs")}
+      </Link>
+      <Link
+        href={"https://github.com/geallenboy"}
+        className="text-sm font-medium hover:underline underline-offset-4"
+      >
+        {homeT("aboutMe")}
+      </Link>
+      <Link
+        href={"https://github.com/geallenboy/ai-image"}
+        className="text-sm font-medium hover:underline underline-offset-4 tracking-tighter"
+      >
+        {homeT("github")}
       </Link>
     </>
   );
