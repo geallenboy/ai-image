@@ -14,6 +14,8 @@
     "textPro": "Pro"
   },
   "login": {
+    "google": "Sign in with Google",
+    "github": "Sign in with Github",
     "loginForm": {
       "name": "Login",
       "title1": "Enter your email below to login to your account",

@@ -15,6 +15,8 @@
     "textPro": "专业版"
   },
   "login": {
+    "google": "Google登录",
+    "github": "Github登录",
     "loginForm": {
       "name": "登录",
       "title1": "在下方输入您的邮箱以登录您的账户",

@@ -20,6 +20,8 @@ import { redirect } from "next/navigation";
 import { Loader2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { GoogleSignin } from "./google-signin";
+import { GithubSignin } from "./github-signin";
 
 export const LoginForm = () => {
   const [loading, setLoading] = useState(false);
@@ -102,6 +104,10 @@ export const LoginForm = () => {
                 {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                 {loginFormT("btn")}
               </Button>
+              <div className="flex gap-4">
+                <GoogleSignin />
+                <GithubSignin />
+              </div>
             </form>
           </Form>
         </div>

@@ -20,6 +20,8 @@ import { signupAction } from "@/app/actions/auth-actions";
 import { redirect } from "next/navigation";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { GoogleSignin } from "./google-signin";
+import { GithubSignin } from "./github-signin";
 
 const passwordValidationRegex = new RegExp(
   "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})"
@@ -161,6 +163,10 @@ export const SignUpForm = () => {
                 {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                 {signUpFormT("btn1")}
               </Button>
+              <div className="flex gap-4">
+                <GoogleSignin />
+                <GithubSignin />
+              </div>
             </form>
           </Form>
         </div>

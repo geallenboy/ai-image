@@ -68,21 +68,15 @@
    ```
 3. 安装依赖：
    ```bash
-   npm install
+   pnpm install
    # 或者
    yarn install
    ```
 4. 配置环境变量：
-   在项目根目录下创建 `.env.local` 文件，并填入以下内容：
-   ```env
-   NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
-   STRIPE_SECRET_KEY=your-stripe-secret-key
-   STRIPE_PUBLIC_KEY=your-stripe-public-key
-   ```
+   复制 `.env.example` 文件并重命名为 `.env`
 5. 启动开发服务器：
    ```bash
-   npm run dev
+   pnpm run dev
    # 或者
    yarn dev
    ```
@@ -120,10 +114,6 @@
    ```
 5. 创建 Pull Request。
 
-### 行为准则
-
-请遵守我们的 [行为准则](CODE_OF_CONDUCT.md)。
-
 ---
 
 ## 许可协议 📄
@@ -143,7 +133,9 @@
 
 ## 联系方式 📧
 
-email: gejialun88@gmail.com
-wx: gegarron
+- 电子邮件：gejialun88@gmail.com
+- 微信号：gegarron
 
 🚀 立即开始，使用 AI Image 快速构建你的下一个 AI 驱动应用！
+
+## 产品展示
