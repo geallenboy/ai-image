@@ -146,6 +146,10 @@
 
 ## 项目预览
 
+[预览地址](https://aiimage.nextjsbase.site/)
+
+## 项目预览
+
 ![login](./public/images/login.png)
 ![home](./public/images/home.png)
 ![dashboard](./public/images/dashboard.png)
