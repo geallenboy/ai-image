@@ -2,7 +2,7 @@
 
 import Stripe from 'stripe';
 import { stripe } from './config';
-import { createClient } from '@/lib/supabase/server';
+import { createServer } from '@/lib/supabase/server';
 import { createOrRetrieveCustomer } from '@/lib/stripe/admin';
 import {
     getURL,
@@ -24,7 +24,7 @@ export async function checkoutWithStripe(
 ): Promise<CheckoutResponse> {
     try {
         // Get the user from Supabase auth
-        const supabase = await createClient();
+        const supabase = await createServer();
         const {
             error,
             data: { user }
@@ -126,7 +126,7 @@ export async function checkoutWithStripe(
 
 export async function createStripePortal(currentPath: string) {
     try {
-        const supabase = await createClient();
+        const supabase = await createServer();
         const {
             error,
             data: { user }

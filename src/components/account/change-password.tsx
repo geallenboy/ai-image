@@ -66,7 +66,7 @@ export const ChangePassword = () => {
       } else {
         toast.success(changePasswordT("infoSuccess"), { id: toastId });
         setLoading(false);
-        router.push("/dashboard");
+        router.push("/login");
       }
     } catch (error: any) {
       toast.error(String(error?.message), { id: toastId });

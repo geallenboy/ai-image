@@ -4,10 +4,10 @@ import { getUser } from "@/lib/supabase/queries";
 import { redirect } from "next/navigation";
 import AccountForm from "@/components/account/account-form";
 import SecuritySetting from "@/components/account/security-setting";
-import { createClient } from "@/lib/supabase/server";
+import { createServer } from "@/lib/supabase/server";
 
 const AccountSettingsPage = async () => {
-  const supabase = await createClient();
+  const supabase = await createServer();
   const user = await getUser(supabase);
   if (!user) {
     return redirect("/login");

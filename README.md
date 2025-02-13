@@ -4,6 +4,8 @@
 
 **AI Image** 项目是一个开源项目，用户可以生成图片、训练自定义模型，并通过多种功能管理账户，包括基于 Stripe 的支付、多语言支持、光暗模式切换等功能。项目使用了现代技术栈，如 Next.js、Supabase 和 Stripe，提供流畅的用户体验。
 
+✨ **致力于帮助开发者、设计师和 AI 研究者轻松构建属于自己的 AI 生成图片工具！**
+
 ---
 
 ## 功能特点 🚀
@@ -133,9 +135,23 @@
 
 ## 联系方式 📧
 
-- 电子邮件：gejialun88@gmail.com
-- 微信号：gegarron
+如果你有任何问题、合作的想法，或者只是想打个招呼，随时与我联系！
+
+- **电子邮件**：[gejialun88@gmail.com](mailto:gejialun88@gmail.com)
+- **Twitter**：[@gejialun88](https://x.com/gejialun88)
+- **个人网站**：[我的网站](https://gegarron.com)
+- **微信号**：wxgegarron
 
 🚀 立即开始，使用 AI Image 快速构建你的下一个 AI 驱动应用！
 
-## 产品展示
+## 项目预览
+
+![login](./public/images/login.png)
+![home](./public/images/home.png)
+![dashboard](./public/images/dashboard.png)
+![genera-image](./public/images/genera-image.png)
+![images-list](./public/images/images-list.png)
+![image-details](./public/images/image-details.png)
+![model](./public/images/model.png)
+![my-model](./public/images/my-model.png)
+![plan](./public/images/plan.png)

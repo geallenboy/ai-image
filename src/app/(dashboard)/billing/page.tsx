@@ -3,12 +3,12 @@ import PlanSummarry from "@/components/billing/plan-summary";
 import Pricing from "@/components/billing/pricing";
 import Title from "@/components/billing/title";
 import { getProducts, getSubscription, getUser } from "@/lib/supabase/queries";
-import { createClient } from "@/lib/supabase/server";
+import { createServer } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
 import React from "react";
 
 const BillingPage = async () => {
-  const supabase = await createClient();
+  const supabase = await createServer();
   const [user, products, subscription] = await Promise.all([
     getUser(supabase),
     getProducts(supabase),

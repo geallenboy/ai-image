@@ -1,4 +1,4 @@
-import { createClient } from "@/lib/supabase/server";
+import { createServer } from "@/lib/supabase/server";
 import { Tables } from "@datatypes.types";
 
 
@@ -9,7 +9,7 @@ interface CreditResponse {
 }
 
 export async function getCreditsAction(): Promise<CreditResponse> {
-    const supabase = await createClient()
+    const supabase = await createServer()
     const { data: { user } } = await supabase.auth.getUser()
 
     const { data: creditsData, error } = await supabase.from("credits").select("*").eq("user_id", user?.id).single();

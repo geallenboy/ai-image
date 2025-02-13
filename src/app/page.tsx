@@ -7,11 +7,11 @@ import Navigtion from "@/components/landing-page/navigation";
 import PricingPage from "@/components/landing-page/pricing";
 import Testimonials from "@/components/landing-page/testimonials";
 import { getProducts, getUser } from "@/lib/supabase/queries";
-import { createClient } from "@/lib/supabase/server";
+import { createServer } from "@/lib/supabase/server";
 import Ready from "@/components/landing-page/ready";
 
 export default async function HomePage() {
-  const supabase = await createClient();
+  const supabase = await createServer();
   const [user, products] = await Promise.all([
     getUser(supabase),
     getProducts(supabase),
@@ -19,7 +19,7 @@ export default async function HomePage() {
 
   return (
     <main className="flex flex-col min-h-screen items-center justify-center">
-      <Navigtion />
+      <Navigtion user={user} />
       <Hero />
       <Features />
       <Testimonials />

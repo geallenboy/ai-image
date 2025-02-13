@@ -1,10 +1,10 @@
 'use server';
 import { supabaseAdmin } from "@/lib/supabase/admin"
-import { createClient } from "@/lib/supabase/server"
+import { createServer } from "@/lib/supabase/server"
 
 
 export const getPresignedstorageUrlAction = async (filePath: string) => {
-    const supabase = await createClient()
+    const supabase = await createServer()
     const { data: { user } } = await supabase.auth.getUser()
     const { data: urlData, error } = await supabaseAdmin.storage.from("training_data").createSignedUploadUrl(`${user?.id}/${new Date().getTime()}_${filePath}`)
     return {
@@ -14,7 +14,7 @@ export const getPresignedstorageUrlAction = async (filePath: string) => {
 }
 
 export async function getModelsAction() {
-    const supabase = await createClient()
+    const supabase = await createServer()
     const { data: { user } } = await supabase.auth.getUser()
 
     const { error, data, count } = await supabase.from("models").select("*", {
@@ -30,7 +30,7 @@ export async function getModelsAction() {
 }
 
 export async function deleteModelsAction(id: number, model_id: string, model_version: string) {
-    const supabase = await createClient()
+    const supabase = await createServer()
     console.log(id, model_id, model_version)
     if (model_version) {
         try {

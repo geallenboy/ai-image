@@ -10,8 +10,6 @@ import {
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { createClient } from "@/lib/supabase/server";
-import { getUser } from "@/lib/supabase/queries";
 import { LanguageSwitcher } from "./language-switcher";
 import { ModeToggle } from "./mode-toggle";
 
@@ -77,10 +75,7 @@ const NavItemsLeft = () => {
   );
 };
 
-const Navigtion = async () => {
-  const supabase = await createClient();
-  const user = await getUser(supabase);
-
+const Navigtion = async (user: any) => {
   return (
     <div className="w-full bg-background/60 backdrop-blur-md fixed top-0 px-8 py-4 z-50 shadow-xl overflow-hidden">
       <header className="contariner mx-auto flex items-center ">

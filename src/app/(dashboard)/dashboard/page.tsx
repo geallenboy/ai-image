@@ -6,12 +6,12 @@ import QuickAction from "@/components/dashboard/quick-action";
 import RecentImage from "@/components/dashboard/recent-images";
 import RecentModels from "@/components/dashboard/recent-models";
 import StatsCards from "@/components/dashboard/stats-card";
-import { createClient } from "@/lib/supabase/server";
+import { createServer } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
 import Title from "@/components/dashboard/title";
 
 const DashboardPage = async () => {
-  const supabase = await createClient();
+  const supabase = await createServer();
   const {
     data: { user },
   } = await supabase.auth.getUser();

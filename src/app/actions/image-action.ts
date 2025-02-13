@@ -2,7 +2,7 @@
 import { ImageGenerationFormSchema } from "@/components/image-generation/config-urations";
 import { z } from "zod"
 import Replicate from "replicate";
-import { createClient } from "@/lib/supabase/server";
+import { createServer } from "@/lib/supabase/server";
 import { Database } from "@datatypes.types";
 import { imageMeta } from "image-meta"
 import { randomUUID } from "crypto"
@@ -96,7 +96,7 @@ export const imgUrlToBlob = async (url: string) => {
 }
 
 export const storeImagesAction = async (data: storeImageinput[]) => {
-    const supabase = await createClient()
+    const supabase = await createServer()
     const { data: { user } } = await supabase.auth.getUser();
 
     if (!user) {
@@ -161,7 +161,7 @@ export const storeImagesAction = async (data: storeImageinput[]) => {
 }
 
 export const getImagesAction = async (limit?: number) => {
-    const supabase = await createClient()
+    const supabase = await createServer()
     const { data: { user } } = await supabase.auth.getUser();
 
     if (!user) {
@@ -203,7 +203,7 @@ export const getImagesAction = async (limit?: number) => {
 }
 
 export const deleteImageAction = async (id: string, imageName: string | null) => {
-    const supabase = await createClient()
+    const supabase = await createServer()
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) {
         return {

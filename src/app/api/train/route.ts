@@ -1,5 +1,5 @@
 import { supabaseAdmin } from "@/lib/supabase/admin";
-import { createClient } from "@/lib/supabase/server";
+import { createServer } from "@/lib/supabase/server";
 import { NextRequest, NextResponse } from "next/server";
 import Replicate from "replicate";
 
@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
         if (!process.env.REPLICATE_API_TOKEN) {
             throw new Error("The replicate api token is not set!")
         }
-        const supabase = await createClient();
+        const supabase = await createServer();
         const { data: { user } } = await supabase.auth.getUser();
         if (!user) {
             return NextResponse.json({
