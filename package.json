@@ -1,10 +1,10 @@
 {
   "name": "ai-image",
-  "version": "0.1.2",
-  "description": "是一个开箱即用的 Next.js 模板，专为快速构建 AI 项目的 SaaS 应用而设计.",
+  "version": "1.0.0",
+  "description": "是一个集图片生成、自定义模型训练、账户管理、支付与订阅、多语言与光暗模式于一体的开源项目",
   "author": "gegarron <gejialun88@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com",
+  "homepage": "https://github.com/geallenboy/ai-image",
   "scripts": {
     "dev": "next dev ",
     "build": "next build",
