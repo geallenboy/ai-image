@@ -37,7 +37,7 @@ import { cn } from "@/lib/utils";
 type ModeType = {
   error: string | null;
   success: boolean;
-  data: Database["public"]["Tables"]["models"]["Row"][] | null;
+  data: Database["public"]["Tables"]["ai_image_models"]["Row"][] | null;
 };
 interface ModelsListProps {
   models: ModeType;

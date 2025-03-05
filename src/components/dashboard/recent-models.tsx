@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { useTranslations } from "next-intl";
 
 interface RecentmodelsProps {
-  models: Database["public"]["Tables"]["models"]["Row"][];
+  models: Database["public"]["Tables"]["ai_image_models"]["Row"][];
 }
 
 const RecentModels = ({ models }: RecentmodelsProps) => {

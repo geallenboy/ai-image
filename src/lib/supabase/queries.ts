@@ -13,7 +13,7 @@ export const getUser = cache(async (supabase: SupabaseClient) => {
 
 export const getSubscription = cache(async (supabase: SupabaseClient) => {
     const { data: subscription } = await supabase
-        .from('subscriptions')
+        .from('ai_image_subscriptions')
         .select('*, prices(*, products(*))')
         .in('status', ['trialing', 'active'])
         .maybeSingle();
@@ -23,7 +23,7 @@ export const getSubscription = cache(async (supabase: SupabaseClient) => {
 
 export const getProducts = cache(async (supabase: SupabaseClient) => {
     const { data: products } = await supabase
-        .from('products')
+        .from('ai_image_products')
         .select('*, prices(*)')
         .eq('active', true)
         .eq('prices.active', true)
@@ -35,7 +35,7 @@ export const getProducts = cache(async (supabase: SupabaseClient) => {
 
 export const getUserDetails = cache(async (supabase: SupabaseClient) => {
     const { data: userDetails } = await supabase
-        .from('users')
+        .from('ai_image_users')
         .select('*')
         .single();
     return userDetails;

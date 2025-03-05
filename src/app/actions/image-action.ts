@@ -87,7 +87,7 @@ export const generateImageAction = async (input: z.infer<ReturnType<typeof Image
 
 type storeImageinput = {
     url: string
-} & Database["public"]["Tables"]["generated_images"]["Insert"]
+} & Database["public"]["Tables"]["ai_image_generated_images"]["Insert"]
 
 export const imgUrlToBlob = async (url: string) => {
     const resposne = fetch(url);
@@ -113,7 +113,7 @@ export const storeImagesAction = async (data: storeImageinput[]) => {
         const { width, height, type } = imageMeta(new Uint8Array(arrayBuffer))
         const fileName = `image_${randomUUID()}.${type}`
         const filePath = `${user.id}/${fileName}`
-        const { error: storageError } = await supabase.storage.from('generated_images').upload(filePath, arrayBuffer, {
+        const { error: storageError } = await supabase.storage.from('ai_image_generated_images').upload(filePath, arrayBuffer, {
             contentType: `image/${type}`,
             cacheControl: '3600',
             upsert: false
@@ -128,7 +128,7 @@ export const storeImagesAction = async (data: storeImageinput[]) => {
             continue;
         }
 
-        const { data: dbData, error: dbError } = await supabase.from('generated_images').insert([{
+        const { data: dbData, error: dbError } = await supabase.from('ai_image_generated_images').insert([{
             user_id: user.id,
             model: img.model,
             prompt: img.prompt,
@@ -171,7 +171,7 @@ export const getImagesAction = async (limit?: number) => {
             data: null
         }
     }
-    let query = supabase.from("generated_images").select("*").eq("user_id", user.id).order("created_at", { ascending: false })
+    let query = supabase.from("ai_image_generated_images").select("*").eq("user_id", user.id).order("created_at", { ascending: false })
     if (limit) {
         query = query.limit(limit)
     }
@@ -184,8 +184,8 @@ export const getImagesAction = async (limit?: number) => {
         }
     }
     const imageWithUrl = await Promise.all(
-        data.map(async (image: Database["public"]["Tables"]["generated_images"]["Insert"]) => {
-            const { data: selData, error: selError } = await supabase.storage.from("generated_images").createSignedUrl(`${user.id}/${image.image_name}`, 3600)
+        data.map(async (image: Database["public"]["Tables"]["ai_image_generated_images"]["Insert"]) => {
+            const { data: selData, error: selError } = await supabase.storage.from("ai_image_generated_images").createSignedUrl(`${user.id}/${image.image_name}`, 3600)
             console.log(selData, 1000, selError)
             return {
                 ...image,
@@ -212,7 +212,7 @@ export const deleteImageAction = async (id: string, imageName: string | null) =>
             data: null
         }
     }
-    const { data, error } = await supabase.from("generated_images").delete().eq("id", id);
+    const { data, error } = await supabase.from("ai_image_generated_images").delete().eq("id", id);
     console.log(data)
     if (error) {
         return {
@@ -220,7 +220,7 @@ export const deleteImageAction = async (id: string, imageName: string | null) =>
             success: false, data: null
         }
     }
-    await supabase.storage.from('generated_images').remove([`${user?.id}/${imageName}`])
+    await supabase.storage.from('ai_image_generated_images').remove([`${user?.id}/${imageName}`])
     return {
         error: null,
         success: true,

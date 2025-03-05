@@ -35,7 +35,7 @@ import { Tables } from "@datatypes.types";
 import { useTranslations } from "next-intl";
 
 interface ConfiguratinsPros {
-  userModels: Tables<"models">[];
+  userModels: Tables<"ai_image_models">[];
   model_id?: string;
 }
 

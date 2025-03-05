@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 interface StatsCardsProps {
   imageCount: number;
   modelCount: number;
-  credits: Database["public"]["Tables"]["credits"]["Row"] | null;
+  credits: Database["public"]["Tables"]["ai_image_credits"]["Row"] | null;
 }
 
 const StatsCards = ({ imageCount, modelCount, credits }: StatsCardsProps) => {

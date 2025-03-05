@@ -14,9 +14,9 @@ import { getStripe } from "@/lib/stripe/client";
 import { toast } from "sonner";
 import { useTranslations } from "next-intl";
 
-type Product = Tables<"products">;
-type Price = Tables<"prices">;
-type Subscription = Tables<"subscriptions">;
+type Product = Tables<"ai_image_products">;
+type Price = Tables<"ai_image_prices">;
+type Subscription = Tables<"ai_image_subscriptions">;
 
 interface ProductWithPrices extends Product {
   prices: Price[];

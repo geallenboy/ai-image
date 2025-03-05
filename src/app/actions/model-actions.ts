@@ -6,7 +6,7 @@ import { createServer } from "@/lib/supabase/server"
 export const getPresignedstorageUrlAction = async (filePath: string) => {
     const supabase = await createServer()
     const { data: { user } } = await supabase.auth.getUser()
-    const { data: urlData, error } = await supabaseAdmin.storage.from("training_data").createSignedUploadUrl(`${user?.id}/${new Date().getTime()}_${filePath}`)
+    const { data: urlData, error } = await supabaseAdmin.storage.from("ai_image_training_data").createSignedUploadUrl(`${user?.id}/${new Date().getTime()}_${filePath}`)
     return {
         signedUrl: urlData?.signedUrl || "",
         error: error?.message || ""
@@ -17,7 +17,7 @@ export async function getModelsAction() {
     const supabase = await createServer()
     const { data: { user } } = await supabase.auth.getUser()
 
-    const { error, data, count } = await supabase.from("models").select("*", {
+    const { error, data, count } = await supabase.from("ai_image_models").select("*", {
         count: "exact"
     }).eq("user_id", user?.id).order("created_at", { ascending: false })
 
@@ -73,7 +73,7 @@ export async function deleteModelsAction(id: number, model_id: string, model_ver
         }
     }
 
-    const { error } = await supabase.from("models").delete().eq("id", id)
+    const { error } = await supabase.from("ai_image_models").delete().eq("id", id)
 
     return {
         error: error?.message || "",

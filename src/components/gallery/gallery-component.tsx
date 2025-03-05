@@ -6,7 +6,7 @@ import ImageDialog from "./image-dialog";
 
 type ImageProps = {
   url: string | undefined;
-} & Tables<"generated_images">;
+} & Tables<"ai_image_generated_images">;
 
 interface GalleyProps {
   images: ImageProps[];

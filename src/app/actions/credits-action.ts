@@ -12,7 +12,7 @@ export async function getCreditsAction(): Promise<CreditResponse> {
     const supabase = await createServer()
     const { data: { user } } = await supabase.auth.getUser()
 
-    const { data: creditsData, error } = await supabase.from("credits").select("*").eq("user_id", user?.id).single();
+    const { data: creditsData, error } = await supabase.from("ai_image_credits").select("*").eq("user_id", user?.id).single();
 
     if (error) {
         return {

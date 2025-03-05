@@ -21,7 +21,7 @@ import { useTranslations } from "next-intl";
   };
  */
 interface RecetImagesProps {
-  images: Tables<"generated_images">[];
+  images: Tables<"ai_image_generated_images">[];
 }
 
 const RecentImage = ({ images }: RecetImagesProps) => {

@@ -8,9 +8,9 @@ import PricingSheet from "./pricing-sheet";
 import { format } from "date-fns";
 import { useTranslations } from "next-intl";
 
-type Product = Tables<"products">;
-type Price = Tables<"prices">;
-type Subscription = Tables<"subscriptions">;
+type Product = Tables<"ai_image_products">;
+type Price = Tables<"ai_image_prices">;
+type Subscription = Tables<"ai_image_subscriptions">;
 
 interface ProductWithPrices extends Product {
   prices: Price[];
@@ -27,7 +27,7 @@ interface PlanSummarryProps {
   subscription: SubscriptionWithProduct | null;
   user: User | null;
   products: ProductWithPrices[] | null;
-  credits: Tables<"credits"> | null;
+  credits: Tables<"ai_image_credits"> | null;
 }
 
 const PlanSummarry = ({

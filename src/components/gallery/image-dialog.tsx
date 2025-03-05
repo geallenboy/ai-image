@@ -17,7 +17,7 @@ import DeleteImage from "./delete-image";
 interface ImageDialogProps {
   image: {
     url: string | undefined;
-  } & Tables<"generated_images">;
+  } & Tables<"ai_image_generated_images">;
   onClose: () => void;
 }
 
