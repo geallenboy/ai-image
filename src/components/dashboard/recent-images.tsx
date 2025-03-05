@@ -48,7 +48,7 @@ const RecentImage = ({ images }: RecetImagesProps) => {
       <CardContent className="space-y-4">
         <Carousel className="w-full ">
           <CarouselContent>
-            {images.map((image) => (
+            {images.map((image: any) => (
               <CarouselItem
                 key={image.id}
                 className=" basis-full md:basis-1/2 lg:basis-1/3"

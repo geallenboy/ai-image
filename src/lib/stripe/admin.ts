@@ -4,8 +4,8 @@ import Stripe from 'stripe';
 import type { Json, Tables, TablesInsert } from '@datatypes.types';
 import { supabaseAdmin } from '@/lib/supabase/admin';
 
-type Product = Tables<'products'>;
-type Price = Tables<'prices'>;
+type Product = Tables<'ai_image_products'>;
+type Price = Tables<'ai_image_prices'>;
 
 // Change to control trial period length
 const TRIAL_PERIOD_DAYS = 0;
@@ -23,7 +23,7 @@ const upsertProductRecord = async (product: Stripe.Product) => {
     };
 
     const { error: upsertError } = await supabaseAdmin
-        .from('products')
+        .from('ai_image_products')
         .upsert([productData]);
     if (upsertError)
         throw new Error(`Product insert/update failed: ${upsertError.message}`);
@@ -50,7 +50,7 @@ const upsertPriceRecord = async (
     };
 
     const { error: upsertError } = await supabaseAdmin
-        .from('prices')
+        .from('ai_image_prices')
         .upsert([priceData]);
 
     if (upsertError?.message.includes('foreign key constraint')) {
@@ -72,7 +72,7 @@ const upsertPriceRecord = async (
 
 const deleteProductRecord = async (product: Stripe.Product) => {
     const { error: deletionError } = await supabaseAdmin
-        .from('products')
+        .from('ai_image_products')
         .delete()
         .eq('id', product.id);
     if (deletionError)
@@ -82,7 +82,7 @@ const deleteProductRecord = async (product: Stripe.Product) => {
 
 const deletePriceRecord = async (price: Stripe.Price) => {
     const { error: deletionError } = await supabaseAdmin
-        .from('prices')
+        .from('ai_image_prices')
         .delete()
         .eq('id', price.id);
     if (deletionError) throw new Error(`Price deletion failed: ${deletionError.message}`);
@@ -91,7 +91,7 @@ const deletePriceRecord = async (price: Stripe.Price) => {
 
 const upsertCustomerToSupabase = async (uuid: string, customerId: string) => {
     const { error: upsertError } = await supabaseAdmin
-        .from('customers')
+        .from('ai_image_customers')
         .upsert([{ id: uuid, stripe_customer_id: customerId }]);
 
     if (upsertError)
@@ -118,7 +118,7 @@ const createOrRetrieveCustomer = async ({
     // Check if the customer already exists in Supabase
     const { data: existingSupabaseCustomer, error: queryError } =
         await supabaseAdmin
-            .from('customers')
+            .from('ai_image_customers')
             .select('*')
             .eq('id', uuid)
             .maybeSingle();
@@ -151,7 +151,7 @@ const createOrRetrieveCustomer = async ({
         // If Supabase has a record but doesn't match Stripe, update Supabase record
         if (existingSupabaseCustomer.stripe_customer_id !== stripeCustomerId) {
             const { error: updateError } = await supabaseAdmin
-                .from('customers')
+                .from('ai_image_customers')
                 .update({ stripe_customer_id: stripeCustomerId })
                 .eq('id', uuid);
 
@@ -211,7 +211,7 @@ const copyBillingDetailsToCustomer = async (
         address: sanitizedAddress
     });
     const { error: updateError } = await supabaseAdmin
-        .from('users')
+        .from('ai_image_users')
         .update({
             billing_address: { ...address },
             payment_method: { ...payment_method[payment_method.type] }
@@ -227,7 +227,7 @@ const manageSubscriptionStatusChange = async (
 ) => {
     // Get customer's UUID from mapping table.
     const { data: customerData, error: noCustomerError } = await supabaseAdmin
-        .from('customers')
+        .from('ai_image_customers')
         .select('id')
         .eq('stripe_customer_id', customerId)
         .single();
@@ -241,7 +241,7 @@ const manageSubscriptionStatusChange = async (
         expand: ['default_payment_method']
     });
     // Upsert the latest status of the subscription object.
-    const subscriptionData: TablesInsert<'subscriptions'> = {
+    const subscriptionData: TablesInsert<'ai_image_subscriptions'> = {
         id: subscription.id,
         user_id: uuid,
         metadata: subscription.metadata,
@@ -276,7 +276,7 @@ const manageSubscriptionStatusChange = async (
     };
 
     const { error: upsertError } = await supabaseAdmin
-        .from('subscriptions')
+        .from('ai_image_subscriptions')
         .upsert([subscriptionData]);
     if (upsertError)
         throw new Error(`Subscription insert/update failed: ${upsertError.message}`);
@@ -294,14 +294,14 @@ const manageSubscriptionStatusChange = async (
 };
 
 const updateUserCredits = async (userId: string, metadata: Json) => {
-    const creditsData: TablesInsert<"credits"> = {
+    const creditsData: TablesInsert<"ai_image_credits"> = {
         user_id: userId,
         image_generation_count: (metadata as { image_generation_count?: number }).image_generation_count ?? 0,
         model_training_count: (metadata as { model_training_count?: number }).model_training_count ?? 0,
         max_image_generation_count: (metadata as { image_generation_count?: number }).image_generation_count ?? 0,
         max_model_training_count: (metadata as { model_training_count?: number }).model_training_count ?? 0,
     }
-    const { error: upsertError } = await supabaseAdmin.from("credits").upsert(creditsData).eq("user_id", userId)
+    const { error: upsertError } = await supabaseAdmin.from("ai_image_credits").upsert(creditsData).eq("user_id", userId)
     if (upsertError) {
         throw new Error(`Credits update failed:${upsertError.message}`)
     }

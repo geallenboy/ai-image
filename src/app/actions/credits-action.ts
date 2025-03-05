@@ -5,7 +5,7 @@ import { Tables } from "@datatypes.types";
 interface CreditResponse {
     error: string | null;
     success: boolean;
-    data: Tables<"credits"> | null;
+    data: Tables<"ai_image_credits"> | null;
 }
 
 export async function getCreditsAction(): Promise<CreditResponse> {

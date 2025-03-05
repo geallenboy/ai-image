@@ -11,8 +11,8 @@ import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-type Product = Tables<"products">;
-type Price = Tables<"prices">;
+type Product = Tables<"ai_image_products">;
+type Price = Tables<"ai_image_prices">;
 interface ProductWithPrices extends Product {
   prices: Price[];
 }
